@@ -14,7 +14,8 @@ $inc_files = array(
   'lib/class-fii-theme.php',
   'lib/wp-bootstrap-navwalker.php',
   'lib/fii-hooks/fii-hooks.php',
-  'lib/class-fii-shortcode.php'
+  'lib/class-fii-shortcode.php',
+  'lib/class-fii-post-views.php'
 );
 
 foreach( $inc_files as $inc_file ){ require_once( $inc_file ); }

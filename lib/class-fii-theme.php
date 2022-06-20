@@ -15,6 +15,15 @@ class FII_THEME {
 
     wp_enqueue_script( 'fii-core-js', FII_THEME_URI.'/js/main.js', array('jquery'), time(), true );
 
+    // FII POST VIEWS COUNT
+		if( is_singular( 'post' ) ){
+			wp_enqueue_script('fii-post-views', FII_THEME_URI.'/js/fii-post-view-count.js', array('jquery'), time(), true );
+			wp_localize_script( 'fii-post-views', 'FII_POST_VIEW', array(
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		    'token' =>  wp_create_nonce('fii_post_view_count')
+		  ) );
+		}
+
   }
 
 }
