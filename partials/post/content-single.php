@@ -26,4 +26,12 @@
 		<a href="https://www.youtube.com/channel/UCh9Z5tOOo7D3Jb22K6gItHQ" target="_blank" rel="noopener">Youtube</a> and
 		<a href="https://t.me/feminisminindia" target="_blank" rel="noopener">Telegram</a> for latest updates.
 	</div>
+  <div class="entry-comments">
+    <?php
+      // If comments are open or we have at least one comment, load up the comment template.
+      if ( comments_open() || get_comments_number() ) {
+        comments_template();
+      }
+    ?>
+  </div>
 </div>
