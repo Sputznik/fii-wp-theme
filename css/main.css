@@ -1066,6 +1066,77 @@ ul.slick-dots li button{
 ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background: #2d2d2d; opacity: 1; }
 
 
+/* CATEGORIES */
+.category-sidebar{
+  margin-top: 40px;
+}
+
+.category-header {
+  text-align: center;
+}
+
+.category-header .page-title {
+ margin: 0 0 30px;
+}
+
+.category-header .page-description {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.fii-category-children {
+  margin-bottom: 30px;
+}
+
+.fii-category-children ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fii-category-children li {
+  margin: 0 10px 10px 0;
+}
+
+.fii-category-children li > a {
+  display: inline-block;
+  color: #e7343f;
+  line-height: 1;
+  text-align: center;
+  padding: 16px 32px;
+  background: transparent;
+  border: 2px solid #e7343f;
+}
+
+.fii-category-children li > a:hover {
+  color: #ffffff;
+  background-color: #e7343f;
+}
+
+/* LOAD MORE BUTTON */
+.fii-load-more .load-more {
+  display: flex;
+  color: #ffffff;
+  padding: 0 20px;
+  font-weight: 600;
+  line-height: 40px;
+  background: #3d3d3d;
+}
+
+.fii-load-more .load-more::after {
+  content: "";
+  display: block;
+  position: relative;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,
