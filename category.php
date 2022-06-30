@@ -5,7 +5,7 @@
 get_header();
 $category = $wp_query->get_queried_object();
 ?>
-<div class="container" style="margin-top:20px;margin-bottom: 40px;">
+<div class="container category-page">
   <div class="category-header">
     <h1 class="page-title"><?php _e( $category->name ); ?></h1>
     <div class="page-description"><?php _e( $category->category_description ); ?></div>
