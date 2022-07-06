@@ -9,6 +9,7 @@ class FII_THEME {
   function assets() {
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', false, null );
     wp_enqueue_style( 'fii-core-style', FII_THEME_URI.'/css/main.css', array('font-awesome'), time() );
+    wp_enqueue_style( 'fii-woocommerce', FII_THEME_URI.'/css/fii-woocommerce.css', array('fii-core-style'), time() );
 
     //ENQUEUE SCRIPTS
     wp_enqueue_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js', array('jquery'), null, true);
