@@ -61,6 +61,38 @@
   font-weight: 700;
 }
 
+/* SINGLE PRODUCT PAGE */
+.woocommerce div.product {
+  margin-top: 80px;
+}
+
+.woocommerce div.product p.price {
+  color: #000000;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.woocommerce div.product form.cart div.quantity > input[type=number] {
+  width: 80px;
+  line-height: 40px;
+  padding: 0;
+}
+
+.woocommerce div.product p.stock {
+  color: #e7343f;
+}
+
+.woocommerce div.product .related.products {
+  clear: both;
+}
+
+.woocommerce div.product .related.products > h2 {
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
 @media( max-width: 767px ){
   .woocommerce-page ul.products[class*=columns-] li.product {
     width: 100%;
