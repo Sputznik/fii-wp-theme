@@ -106,6 +106,36 @@ jQuery(document).ready(function(){
       $this.addClass( 'loaded' );
   });
 
+
+  /* FII LOGO SLIDER */
+	jQuery('[data-behaviour~=fii-logo-slider]').each( function () {
+
+    var $this = jQuery( this );
+
+    $this.slick({
+      slidesToShow  : $this.data('slides'),
+      slidesToScroll: 1,
+      autoplay		  : true,
+			autoplaySpeed	: 1500,
+			arrows			  : false,
+			dots			    : false,
+			pauseOnHover	: false,
+			responsive		: [{
+				breakpoint	: 960,
+				settings	: { slidesToShow: 4 }
+			}, {
+				breakpoint: 768,
+				settings: { slidesToShow: 3 }
+			},{
+        breakpoint: 520,
+				settings: { slidesToShow: 2 }
+      }]
+    });	// slick
+
+    $this.addClass( 'loaded' );
+
+  } );
+
   // EXECUTED ON PAGE LOAD
   styleMegaParentItem();
 
