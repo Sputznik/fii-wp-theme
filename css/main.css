@@ -1132,6 +1132,31 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   background-color: #e7343f;
 }
 
+.subcat-breadcrumb > ol,
+.subcat-breadcrumb > ol > li,
+.subcat-breadcrumb > ol > li > a {
+  display: inline-block;
+}
+
+.subcat-breadcrumb > ol > li {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 1;
+}
+
+.subcat-breadcrumb > ol > li > a:hover {
+  text-decoration: underline;
+}
+
+.subcat-breadcrumb > ol > li > i {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.subcat-breadcrumb > ol > li:first-child {
+  color: #808080;
+}
+
 /* LOAD MORE BUTTON */
 .fii-load-more .load-more {
   display: flex;
