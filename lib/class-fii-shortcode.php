@@ -27,13 +27,16 @@ class FII_SHORTCODE {
       $args = shortcode_atts( array(
         'text'  => 'Link Text',
         'url'   => '#',
-        'style' => 'default' //default, dark
+        'style' => 'default',  //default, dark
+        'align' => 'left'     // left, right, center
       ), $atts );
       ob_start(); ?>
-      <a href="<?php _e( $args['url'] );?>" class="fii-btn-sh fii-btn-sh-<?php _e( $args['style'] );?>">
-        <span class="btn-text"><?php _e( $args['text'] );?></span>
-        <span class="fii-btn-img" style="background-image:url(<?php _e( $img );?>);" role="img" aria-hidden="true"></span>
-      </a>
+      <div class="fii-btn-<?php _e( $args['align'] ); ?>">
+        <a href="<?php _e( $args['url'] );?>" class="fii-btn-sh fii-btn-sh-<?php _e( $args['style'] );?>">
+          <span class="btn-text"><?php _e( $args['text'] );?></span>
+          <span class="fii-btn-img" style="background-image:url(<?php _e( $img );?>);" role="img" aria-hidden="true"></span>
+        </a>
+      </div>
       <?php return ob_get_clean();
     }
 }

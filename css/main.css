@@ -1180,6 +1180,18 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 }
 
 /* FII BUTTON */
+.fii-btn-left {
+  text-align: left;
+}
+
+.fii-btn-right {
+  text-align: right;
+}
+
+.fii-btn-center {
+  text-align: center;
+}
+
 .fii-btn-sh {
   display: inline-flex;
   color: #ffffff;
