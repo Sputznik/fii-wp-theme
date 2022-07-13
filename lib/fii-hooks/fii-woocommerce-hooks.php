@@ -35,3 +35,17 @@ add_action( 'wp', function(){
 
 /* REMOVE TABS FROM SINGLE PRODUCT PAGE */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+
+/* REMOVE SKU, CATEGORIES, TAGS FROM SINGLE PRODUCT PAGE */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+/* SHOW CATEGORIES */
+add_action( 'woocommerce_single_product_summary', function(){
+  global $product;
+  ?>
+  <div class="product_meta">
+    <?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+  </div>
+  <?php
+}, 40 );

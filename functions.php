@@ -41,6 +41,7 @@ add_action( 'after_setup_theme', function() {
   add_theme_support( 'wp-block-styles' );
   add_theme_support( 'responsive-embeds' );
   add_theme_support( 'woocommerce' );
+  add_theme_support( 'wc-product-gallery-slider' );
 });
 
 /* ADD SOW FROM THE THEME */
