@@ -481,6 +481,7 @@ blockquote p{ margin: 0; }
   font-weight: 600;
   line-height: 1.3em;
   padding: 13px 0;
+  text-transform: capitalize;
 }
 
 /* FII ORBIT TEMPLATES */
@@ -557,6 +558,7 @@ blockquote p{ margin: 0; }
 .fii-featured-grid .title {
   margin-top: -3px;
   font-size: 22px;
+  word-break: break-word;
 }
 
 /* FEATURED GRID */
@@ -988,13 +990,20 @@ blockquote p{ margin: 0; }
   background-color: #2d2d2d;
   color: #ffffff;
   width: 60%;
+  height: 200px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.fii-video-slider .video-meta > h3 {
+  max-height: 134px;
+  overflow: hidden;
+}
+
 .fii-video-slider .fii-thumbnail-bg {
-  min-height: 182px;
+  height: 200px;
   width: 40%;
 }
 
@@ -1291,6 +1300,10 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   .fii-featured-grid .author {
     font-size: 12px;
     line-height: 14px;
+  }
+
+  .fii-grid .post-card {
+    margin-bottom: 20px;
   }
 
 }
