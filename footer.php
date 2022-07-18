@@ -4,7 +4,7 @@
       <div class="container">
         <?php if ( is_active_sidebar( 'footer-sidebar' ) ) { dynamic_sidebar( 'footer-sidebar' ); } ?>
       </div>
-      <div class="scroll-top"><a href="#top" class="back-to-top"><i class="fas fa-angle-up"></i></a></div>
+      <div class="scroll-top"><a href="#top" class="back-to-top" aria-label="Back to top"><i aria-hidden="true" class="fas fa-angle-up"></i></a></div>
     </footer>
     <!-- SEARCH MODAL -->
     <div id="search-modal" class="fii-modal" tabindex="-1" role="dialog">
