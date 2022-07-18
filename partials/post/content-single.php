@@ -21,6 +21,7 @@
   	</div>
   <?php endif; endif; ?>
 	<?php do_action( 'fii_sidebar', 'fii-support-work' );?>
+  <div class="fii-social-share"><span class="title">» Share this </span><?php echo do_shortcode('[addtoany]');?></div>
 	<div class="follow-channel">
 		Follow FII channels on
 		<a href="https://www.youtube.com/channel/UCh9Z5tOOo7D3Jb22K6gItHQ" target="_blank" rel="noopener">Youtube</a> and

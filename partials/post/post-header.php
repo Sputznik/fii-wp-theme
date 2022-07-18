@@ -22,4 +22,5 @@
     <span class="dot"></span>
     <span><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min read"]'); ?></span>
   </div>
+  <div class="fii-social-share"><?php echo do_shortcode('[addtoany]');?></div>
 </div>

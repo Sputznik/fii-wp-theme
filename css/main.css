@@ -664,7 +664,8 @@ blockquote p{ margin: 0; }
 .single .follow-channel a,
 .single .fii-read > .title,
 .single .editors-note > .title,
-.single .feat-img-note > .title {
+.single .feat-img-note > .title,
+.single .fii-social-share > .title {
   color: #e7343f;
   font-weight: 700;
 }
@@ -1225,6 +1226,15 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* SOCIAL SHARE */
+.fii-social-share {
+  margin: 20px 0;
+}
+
+.fii-social-share > .addtoany_shortcode {
+  display: inline-block;
 }
 
 
