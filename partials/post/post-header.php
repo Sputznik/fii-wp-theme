@@ -20,7 +20,7 @@
     <span class="dot"></span>
     <span class="post-date"><?php _e( the_time( 'F j, y' ) );?></span>
     <span class="dot"></span>
-    <span><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min read"]'); ?></span>
+    <span><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min"]'); ?></span>
   </div>
   <div class="fii-social-share"><?php echo do_shortcode('[addtoany]');?></div>
 </div>

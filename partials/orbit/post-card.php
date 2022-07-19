@@ -4,5 +4,5 @@
 	<p class="author">
     By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
   </p>
-	<span class="meta"><?php echo do_shortcode('[rt_reading_time postfix="min read"]'); ?> | <?php the_time( 'F j, Y' );?></span>
+	<span class="meta"><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min"]'); ?> | <?php the_time( 'F j, Y' );?></span>
 </div>
