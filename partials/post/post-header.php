@@ -1,3 +1,8 @@
+<?php
+/**
+ * The template for displaying single post header.
+ */
+?>
 <div class="fii-single-post-header">
   <div class="fii-breadcrumb">
     <span><a class="crumb" href="<?php bloginfo('url');?>">Home</a></span><i class="fa fa-angle-right"></i>

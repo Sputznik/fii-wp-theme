@@ -77,3 +77,10 @@ add_action('fii_nav_menu', function(){
 	wp_nav_menu( $fii_nav_menu_options );
 
 });
+
+/* CHECK IF THE POST HAS FEATURED IMAGE */
+if ( ! function_exists( 'fii_has_featured_img' ) ) {
+  function fii_has_featured_img() {
+    return !empty( get_the_post_thumbnail() ) ? true : false;
+  }
+}

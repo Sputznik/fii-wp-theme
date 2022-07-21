@@ -621,15 +621,18 @@ blockquote p{ margin: 0; }
   margin-bottom: 20px;
 }
 
-.single .featured-img::before {
+.single .featured-img::before,
+.single.post-template-single-post-1 .featured-img::before,
+.single.post-template-single-post-2 .featured-img::before {
   display: block;
   content: "";
-  padding-top: 66.6667%;
+  padding-top: 56.25%;
 }
 
 .fii-single-post-header > .title,
 .fii-single-post-header > .sub-title {
   font-weight: 400;
+  word-break: break-word;
 }
 
 .fii-single-post-header > .sub-title {
@@ -638,6 +641,10 @@ blockquote p{ margin: 0; }
 
 .fii-single-post-header .post-meta {
   margin: 10px 0;
+}
+
+.post-template-single-post-2 .fii-single-post-header {
+  text-align: center;
 }
 
 /* BREADCRUMB */
