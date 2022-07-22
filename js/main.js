@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 
     // SHOW SEARCH MODAL
-    jQuery('.nav-search').on( 'click', function (){
+    jQuery('.nav-search, [data-behaviour~=fii-search-modal]').on( 'click', function (){
       jQuery('#search-modal').show()
       jQuery('.search-field input.search-input').focus();
     });
