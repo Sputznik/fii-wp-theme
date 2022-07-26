@@ -20,7 +20,7 @@
   <?php endif; ?>
   <div class="post-meta">
     <span class="author">
-      By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+      By <a href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo get_the_author_meta( 'display_name',$post->post_author );?></a>
     </span>
     <span class="dot"></span>
     <span class="post-date"><?php _e( the_time( 'F j, y' ) );?></span>
