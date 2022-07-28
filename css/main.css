@@ -1098,22 +1098,27 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 /* CATEGORIES */
 .category-page,
 .search-page,
-.tag-page {
+.tag-page,
+.archive-page {
   margin-top: 50px;
   margin-bottom: 40px;
 }
 
-.category-sidebar{
+.category-sidebar,
+.tag-sidebar,
+.archive-sidebar {
   margin-top: 40px;
 }
 
 .category-header,
-.tag-header {
+.tag-header,
+.archive-page .page-title {
   text-align: center;
 }
 
 .category-header .page-title,
-.tag-header .page-title {
+.tag-header .page-title,
+.archive-page .page-title {
    margin: 0 0 20px;
    word-break: break-word;
    text-transform: capitalize;
