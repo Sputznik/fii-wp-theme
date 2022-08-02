@@ -1099,7 +1099,8 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 .category-page,
 .search-page,
 .tag-page,
-.archive-page {
+.archive-page,
+.author-page {
   margin-top: 50px;
   margin-bottom: 40px;
 }
@@ -1282,6 +1283,74 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   opacity: 0.9;
 }
 
+/* PROFILE AUTHOR BOX */
+.author .author-header {
+  background-color: #e5e5e5;
+  padding: 50px 0;
+}
+
+.profile-author-box .content-wrapper {
+  margin-bottom: 0;
+}
+
+.profile-author-box .author-name {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.profile-author-box .author-bio {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 14px;
+}
+
+.profile-author-box .author-social {
+  display: flex;
+  align-items: center;
+  grid-gap: 20px;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.profile-author-box .author-social a {
+  font-size: 18px;
+  color: #000000;
+}
+
+.profile-author-box .author-name::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 40%;
+  margin: 20px 0;
+  border-bottom: 3px dotted #e7343f;
+}
+
+.profile-author-box .author-social a {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  line-height: 26px;
+  font-size: 20px;
+  padding: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-author-box .content-wrapper {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.profile-author-box .author-info {
+  flex: 1;
+}
+
 
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
@@ -1359,6 +1428,23 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 
   .fii-grid .post-card {
     margin-bottom: 20px;
+  }
+
+  .profile-author-box .content-wrapper{
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-author-box .author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-author-box .author-name::after {
+    margin: 20px auto;
+    max-width: 60%;
   }
 
 }
