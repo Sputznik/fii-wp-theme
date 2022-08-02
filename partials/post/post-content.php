@@ -14,6 +14,7 @@ if( strlen( trim( $feat_img_src ) ) > 0  ): ?>
   <span class="title">» Featured Image sources: </span><?php _e( $feat_img_src );?>
 </div>
 <?php endif; endif; ?>
+<?php FII_MOLONGUI::fii_post_author_box(); ?>
 <?php do_action( 'fii_sidebar', 'fii-support-work' );?>
 <div class="fii-social-share"><span class="title">» Share this </span><?php echo do_shortcode('[addtoany]');?></div>
 <div class="follow-channel">

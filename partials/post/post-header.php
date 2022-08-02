@@ -2,6 +2,8 @@
 /**
  * The template for displaying single post header.
  */
+ $author_name = get_the_author();
+ $author_url = get_author_posts_url( get_the_author_meta('ID') );
 ?>
 <div class="fii-single-post-header">
   <div class="fii-breadcrumb">
@@ -20,7 +22,7 @@
   <?php endif; ?>
   <div class="post-meta">
     <span class="author">
-      By <a href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo get_the_author_meta( 'display_name',$post->post_author );?></a>
+      By <a href="<?php echo $author_url;?>" title="<?php _e( 'View all posts by '. $author_name );?>"><?php echo $author_name; ?></a>
     </span>
     <span class="dot"></span>
     <span class="post-date"><?php _e( the_time( 'F j, y' ) );?></span>
