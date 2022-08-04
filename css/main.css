@@ -116,7 +116,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  color: #e7343f;
+  color: #cf2e2e;
   font-size: 18px;
   text-align: left;
   line-height: 1.7;
@@ -320,7 +320,7 @@ blockquote p{ margin: 0; }
 
 #fii-navigation > .container > .menu > li.active,
 #fii-navigation > .container > .menu > li.current-menu-ancestor {
-  border-bottom-color: #e7343f;
+  border-bottom-color: #cf2e2e;
 }
 
 #fii-navigation > .container > .menu > li > a,
@@ -394,7 +394,7 @@ blockquote p{ margin: 0; }
 #mobile-nav .menu > li.current-menu-ancestor > a .menu-toggler,
 #mobile-nav .menu > li.mega-dropdown.active > a,
 #mobile-nav .menu > li.mega-dropdown.active > a .menu-toggler {
-  color: #e7343f;
+  color: #cf2e2e;
 }
 
 /* MEGA DROPDOWN */
@@ -534,7 +534,7 @@ blockquote p{ margin: 0; }
 .fii-list .author > a,
 .fii-featured-grid .author > a,
 .fii-single-post-header .author > a {
-  color: #e7343f;
+  color: #cf2e2e;
   text-transform: capitalize;
 }
 
@@ -612,8 +612,16 @@ blockquote p{ margin: 0; }
 }
 
 /* SINGLE POST */
-.single-post-content a{ color: #e7343f; }
+.single-post-content a{ color: #cf2e2e; }
 .single-post-content a:hover { text-decoration: underline; }
+
+.single .fii-read,
+.single .editors-note,
+.single .feat-img-note,
+.single-post-content p {
+  font-size: 16px;
+  line-height: 23px;
+}
 
 .single .featured-img {
   height: 100%;
@@ -659,12 +667,12 @@ blockquote p{ margin: 0; }
   color: #888888;
   font-size: 13px;
 }
-.fii-breadcrumb a.crumb:hover { color: #e7343f; }
-.fii-breadcrumb i { margin: 0 15px 0 19px; }
+.fii-breadcrumb a.crumb:hover { color: #cf2e2e; }
+.fii-breadcrumb i { margin: 0 6px 0 10px; }
 
 .single .editors-note,
 .single .feat-img-note,
-.single .fii-read {
+.single .fii-read a {
   color: #808080;
 }
 
@@ -673,7 +681,7 @@ blockquote p{ margin: 0; }
 .single .editors-note > .title,
 .single .feat-img-note > .title,
 .single .fii-social-share > .title {
-  color: #e7343f;
+  color: #cf2e2e;
   font-weight: 700;
 }
 
@@ -702,6 +710,11 @@ blockquote p{ margin: 0; }
 
 .related-post > .title {
   font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.single footer {
+  margin-top: 60px;
 }
 
 /* COMMENTS */
@@ -753,7 +766,7 @@ blockquote p{ margin: 0; }
 }
 
 .comment-list .comment .reply a[href]:hover {
-  color: #e7343f;
+  color: #cf2e2e;
 }
 
 .comment-list .comment .children {
@@ -944,7 +957,7 @@ blockquote p{ margin: 0; }
   font-size: 26px;
 	line-height: 34px;
 	color: #ffffff;
-  background-color: #e7343f;
+  background-color: #cf2e2e;
 }
 
 .scroll-top.show{
@@ -1102,7 +1115,7 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 .archive-page,
 .author-page {
   margin-top: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .category-sidebar,
@@ -1149,18 +1162,18 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 
 .fii-category-children li > a {
   display: inline-block;
-  color: #e7343f;
+  color: #cf2e2e;
   line-height: 1;
   text-align: center;
   padding: 16px 32px;
   background: transparent;
-  border: 2px solid #e7343f;
+  border: 2px solid #cf2e2e;
 }
 
 .fii-category-children li > a:hover,
 .fii-category-children li a.parent-cat {
   color: #ffffff;
-  background-color: #e7343f;
+  background-color: #cf2e2e;
 }
 
 .subcat-breadcrumb > ol,
@@ -1305,7 +1318,7 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 }
 
 .post-author-box .author-name a:hover {
-  color: #e7343f;
+  color: #cf2e2e;
 }
 
 .post-author-box .author-name,
@@ -1355,7 +1368,7 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   width: 100%;
   max-width: 40%;
   margin: 20px 0;
-  border-bottom: 3px dotted #e7343f;
+  border-bottom: 3px dotted #cf2e2e;
 }
 
 .profile-author-box .author-social a {

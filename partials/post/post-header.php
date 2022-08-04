@@ -7,7 +7,6 @@
 ?>
 <div class="fii-single-post-header">
   <div class="fii-breadcrumb">
-    <span><a class="crumb" href="<?php bloginfo('url');?>">Home</a></span><i class="fa fa-angle-right"></i>
     <span>
       <?php
         $single_cat = get_the_category( get_the_ID() );
