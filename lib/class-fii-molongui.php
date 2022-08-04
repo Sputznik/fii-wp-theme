@@ -26,7 +26,7 @@ class FII_MOLONGUI {
 
   // RETURNS SINGLE POST AUTHOR BOX
   public static function fii_post_author_box(){
-    if ( function_exists('molongui_get_authors') ) {
+    if ( self::is_active_molongui_shortcode() && function_exists('molongui_get_authors') ) {
       get_template_part('partials/post/author-box');
     }
   }
@@ -34,6 +34,14 @@ class FII_MOLONGUI {
   // RETURNS AUTHOR POSTS LINK
   public static function fii_author_posts_link( $post_id ){
     return function_exists( 'get_the_molongui_author_posts_link' ) ? the_molongui_author_posts_link( $post_id ) : the_author_posts_link();
+  }
+
+  /**
+   * Checks if molongui shortcode is active.
+   * @return bool True if active, false otherwise.
+   */
+  public static function is_active_molongui_shortcode(){
+    return shortcode_exists('molongui_author_name');
   }
 
 }

@@ -8,20 +8,22 @@ $current_author_id =  get_the_author_meta( 'ID' );
 $is_current_author_guest = is_guest_author();
 $current_author_type = !$is_current_author_guest ? 'user' : 'guest';
 ?>
-<div class="author-header">
-  <div class="container">
-    <?php
-      FII_MOLONGUI::fii_author_box( array(
-        'id'      => $current_author_id,
-        'type'    => $current_author_type,
-        'name'    => !$is_current_author_guest ? get_the_author() : '',
-        'class'   => 'profile',
-        'linked'  => false,
-        'size'    => '200'
-      ) );
-    ?>
+<?php if( FII_MOLONGUI::is_active_molongui_shortcode() ): ?>
+  <div class="author-header">
+    <div class="container">
+      <?php
+        FII_MOLONGUI::fii_author_box( array(
+          'id'      => $current_author_id,
+          'type'    => $current_author_type,
+          'name'    => !$is_current_author_guest ? get_the_author() : '',
+          'class'   => 'profile',
+          'linked'  => false,
+          'size'    => '200'
+        ) );
+      ?>
+    </div>
   </div>
-</div>
+<?php endif; ?>
 <div class="container author-page">
   <div class="orbit-posts-wrapper">
     <h2>Published Posts</h2>
