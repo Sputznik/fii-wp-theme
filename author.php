@@ -5,7 +5,7 @@
 get_header();
 
 $current_author_id =  get_the_author_meta( 'ID' );
-$is_current_author_guest = is_guest_author();
+$is_current_author_guest = FII_MOLONGUI::is_guest_author();
 $current_author_type = !$is_current_author_guest ? 'user' : 'guest';
 ?>
 <?php if( FII_MOLONGUI::is_active_molongui_shortcode() ): ?>

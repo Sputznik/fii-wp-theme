@@ -44,4 +44,13 @@ class FII_MOLONGUI {
     return shortcode_exists('molongui_author_name');
   }
 
+  /**
+   * Checks if the current author is a guest-author.
+   * @return bool True if guest-author, false otherwise.
+   */
+  public static function is_guest_author(){
+    global $wp_query;
+    return isset( $wp_query->is_guest_author ) ? $wp_query->is_guest_author : false;
+  }
+
 }
