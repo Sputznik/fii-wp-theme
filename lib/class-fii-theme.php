@@ -16,6 +16,8 @@ class FII_THEME {
 
     wp_enqueue_script( 'fii-core-js', FII_THEME_URI.'/js/main.js', array('jquery'), time(), true );
 
+    wp_enqueue_script('fii-user-popup', FII_THEME_URI.'/js/fii-user-popup.js', array('jquery'), time(), true ); // SOW USER POPUP SCRIPT
+
     // FII POST VIEWS COUNT
 		if( is_singular( 'post' ) ){
 			wp_enqueue_script('fii-post-views', FII_THEME_URI.'/js/fii-post-view-count.js', array('jquery'), time(), true );

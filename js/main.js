@@ -6,6 +6,11 @@ jQuery(document).ready(function(){
       jQuery('.search-field input.search-input').focus();
     });
 
+    // SHOW USER MODAL
+    jQuery('[data-behaviour~=fii-user-modal]').on( 'click', function (){
+      jQuery('#fii-user-modal').show();
+    });
+
     // CLOSE MODAL
     jQuery('.fii-modal .close-modal').on( 'click', function (){
       jQuery('.fii-modal').hide();
