@@ -618,9 +618,9 @@ blockquote p{ margin: 0; }
 .single .fii-read,
 .single .editors-note,
 .single .feat-img-note,
-.single-post-content p {
+.single-post-content {
   font-size: 16px;
-  line-height: 23px;
+  line-height: 26px;
 }
 
 .single .featured-img {
@@ -644,7 +644,8 @@ blockquote p{ margin: 0; }
 }
 
 .fii-single-post-header > .sub-title {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .fii-single-post-header .post-meta {
@@ -848,7 +849,11 @@ blockquote p{ margin: 0; }
 }
 
 /* ALSO READ */
-.single .fii-read > a:hover {
+.fii-read {
+  margin: 40px 0;
+}
+
+.fii-read > a:hover {
   text-decoration: underline;
 }
 
