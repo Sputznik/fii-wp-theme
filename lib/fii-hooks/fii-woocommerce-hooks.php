@@ -26,12 +26,8 @@ add_filter( 'woocommerce_breadcrumb_home_url', function(){
   return wc_get_page_permalink( 'shop' );
 } );
 
-/* REMOVE SIDEBAR FROM SINGLE PRODUCT PAGE  */
-add_action( 'wp', function(){
-  if ( is_product() ) {
-    remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
-  }
-} );
+/* REMOVE SIDEBAR */
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
 /* REMOVE TABS FROM SINGLE PRODUCT PAGE */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
