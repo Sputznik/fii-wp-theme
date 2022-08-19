@@ -1,9 +1,5 @@
 <?php get_template_part('partials/mobile-menu');?>
-<div class="fii-top-bar">
-  <strong>
-    FII was created with the vision of dismantling patriarchy and social injustice. <a href="#">Learn more here.</a>
-  </strong>
-</div>
+<?php do_action( 'fii_sidebar', 'fii-topbar' ); ?>
 <nav id="fii-navigation" class="navbar navbar-expand-md fixed-top" role="navigation">
   <div class="container">
     <a class="site-logo" href="<?php _e( get_bloginfo('url') ); ?>">

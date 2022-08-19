@@ -2,6 +2,16 @@
 add_action( 'widgets_init', function(){
 
   register_sidebar( array(
+    'name' 			    => 'FII Topbar',
+    'description'   => 'Appears above the primary navigation menu',
+    'id' 			      => 'fii-topbar',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' 	=> '</aside>',
+    'before_title' 	=> '<h3 class="widget-title">',
+    'after_title' 	=> '</h3>',
+  ));
+
+  register_sidebar( array(
     'name' 			    => 'Single Post Sidebar',
     'description'   => 'Appears in the single post page before the pre-footer area',
     'id' 			      => 'fii-single-post-sidebar',

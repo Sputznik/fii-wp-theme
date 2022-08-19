@@ -226,19 +226,6 @@ blockquote p{ margin: 0; }
   padding-left: 0;
 }
 
-/* TOP BAR */
-.fii-top-bar {
-  text-align: center;
-  font-size: 14px;
-  padding: 20px 5px;
-  background-color: #fff8db;
-}
-
-.fii-top-bar a{
-  color: #000000;
-  text-decoration: underline;
-}
-
 /* PRIMARY MENU */
 #fii-navigation{
   height: 100px;
