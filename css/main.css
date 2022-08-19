@@ -1491,6 +1491,48 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 }
 
 
+/* SINGLE JOB */
+.single-job_listing .job-title {
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.single-job_listing .single-post-content {
+  margin-bottom: 50px;
+}
+
+/* JOB LISTING */
+.job_filters .search_jobs {
+  font-family: 'Roboto',sans-serif;
+}
+.job_filters .search_jobs input[type=text] {
+  font-size: 12px;
+  line-height: 21px;
+  color: #444;
+  border: 1px solid #e1e1e1;
+  width: 100%;
+  max-width: 100%;
+  height: 34px;
+  padding: 3px 9px;
+}
+
+.job_filters input[type=submit] {
+  font-size: 13px;
+  background-color: #2d2d2d;
+  border-radius: 0;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: background-color .4s;
+  transition: background-color .4s;
+}
+
+.job_listings .job_filters input[type=submit]:hover {
+  background-color: #cf2e2e;
+}
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,
