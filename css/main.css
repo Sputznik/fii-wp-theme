@@ -107,6 +107,11 @@ hr {
   border-top: 1px solid #eee
 }
 
+.wrapper-margin {
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
 .wp-block-quote,
 .wp-block-pullquote {
   font-family: 'Roboto', sans-serif;
@@ -1531,6 +1536,20 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 
 .job_listings .job_filters input[type=submit]:hover {
   background-color: #cf2e2e;
+}
+
+/* 404 PAGE */
+.error-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.error-header .fii-btn-sh {
+  margin-top: 20px;
+}
+
+.error404 .orbit-posts-wrapper > h2 {
+  margin-bottom: 30px;
 }
 
 /* -------------------------- MEDIA QUERIES ------------------------- */
