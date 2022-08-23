@@ -8,10 +8,10 @@
     </footer>
     <!-- SEARCH MODAL -->
     <div id="search-modal" class="fii-modal" tabindex="-1" role="dialog">
-      <div class="modal-backdrop"></div>
+      <div class="modal-backdrop" data-dismiss="fii-modal"></div>
       <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
         <div class="modal-header" id="modalTitle">
-          <button class="close-modal" type="button" aria-label="Close modal"><i class="fas fa-times"></i></button>
+          <button class="close-modal" type="button" aria-label="Close modal" data-dismiss="fii-modal"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body">
           <div class="search-field">

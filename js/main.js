@@ -12,8 +12,13 @@ jQuery(document).ready(function(){
     });
 
     // CLOSE MODAL
-    jQuery('.fii-modal .close-modal').on( 'click', function (){
+    jQuery('[data-dismiss~=fii-modal]').on( 'click', function (){
       jQuery('.fii-modal').hide();
+    });
+
+    // CLOSE MODAL WHEN Esc key is pressed
+    jQuery(document).on('keydown',function(event) {
+      if( event.keyCode == 27){ jQuery('.fii-modal').hide(); }
     });
 
     function styleMegaParentItem(){

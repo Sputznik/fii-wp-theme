@@ -18,10 +18,10 @@ jQuery.fn.fii_user_modal = function() {
 
       html = `
       <div id="fii-user-modal" class="fii-modal" tabindex="-1" role="dialog">
-				<div class="modal-backdrop"></div>
+				<div class="modal-backdrop" data-dismiss="fii-modal"></div>
 				<div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
 					<div class="modal-header" id="modalTitle">
-						<button class="close-modal" type="button" aria-label="Close modal"><i class="fas fa-times"></i></button>
+						<button class="close-modal" type="button" aria-label="Close modal" data-dismiss="fii-modal"><i class="fas fa-times"></i></button>
 					</div>
 					<div class="modal-body">
 						<div class="fii-card-body">
@@ -55,7 +55,7 @@ jQuery.fn.fii_user_modal = function() {
       jQuery("body").append(html);
 
 			// REMOVES USER MODAL FROM THE DOM
-	    jQuery(document).on( 'click', '#fii-user-modal .close-modal', function () {
+	    jQuery(document).on( 'click', '[data-dismiss~=fii-modal]', function () {
 	      jQuery('#fii-user-modal').remove();
 	    });
 
