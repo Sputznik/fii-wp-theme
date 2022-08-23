@@ -8,7 +8,7 @@
   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
 </div>
 <div class="single-post-content"><?php the_content(); ?></div>
-<?php if( fii_has_featured_img() ): $feat_img_src = get_post( get_post_thumbnail_id( $post->ID ) )->post_content;
+<?php if( FII_UTIL::fii_has_featured_img() ): $feat_img_src = get_post( get_post_thumbnail_id( $post->ID ) )->post_content;
 if( strlen( trim( $feat_img_src ) ) > 0  ): ?>
 <div class="feat-img-note fii-dec-bf fii-dec-af">
   <span class="title">» Featured Image sources: </span><?php _e( $feat_img_src );?>

@@ -11,7 +11,7 @@
       <?php
         $single_cat = get_the_category( get_the_ID() );
         $first_single_cat  = array_shift( $single_cat );
-        if( $first_single_cat ){ echo fii_nested_breadcrumb(  $first_single_cat->term_id ); }
+        if( $first_single_cat ){ echo FII_UTIL::fii_nested_breadcrumb(  $first_single_cat->term_id ); }
       ?>
     <span><?php the_title(); ?></span>
   </div>

@@ -1,9 +1,59 @@
 <?php
 
-class FII_THEME {
+/**
+ * BOOTSTRAPS THEME SPECIFIC FUNCTIONALITIES
+ */
+class FII_THEME extends FII_BASE {
+
+  private $sidebars;
 
   public function __construct() {
-    add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );
+
+    $this->sidebars = array(
+      'fii-topbar'  	=> array(
+        'name' 				=> __( 'FII Topbar', 'fii' ),
+        'description' => __( 'Appears above the primary navigation menu', 'fii' )
+      ),
+      'fii-single-post-sidebar'	=> array(
+        'name' 				=> __( 'Single Post Sidebar', 'fii' ),
+        'description' => __( 'Appears in the single post page before the pre-footer area', 'fii' )
+      ),
+      'fii-support-work'	=> array(
+        'name' 				=> __( 'Support the work', 'fii' ),
+        'description' => __( 'Appears in the single post page before the social share area', 'fii' )
+      ),
+      'fii-category-sidebar'	=> array(
+        'name' 				=> __( 'Category Sidebar', 'fii' ),
+        'description' => __( 'Appears in the category page before the footer area', 'fii' )
+      ),
+      'fii-shop-header'	=> array(
+        'name' 				=> __( 'Shop Page Header', 'fii' ),
+        'description' => __( 'Appears in the shop page after the primary navigation', 'fii' )
+      ),
+      'footer-sidebar'	=> array(
+        'name' 				=> __( 'Footer', 'fii' ),
+        'description' => __( 'Appears in the footer area', 'fii' )
+      )
+    );
+
+    add_action( 'wp_enqueue_scripts', array( $this, 'assets' ) );  // LOAD ASSETS
+
+    add_action( 'after_setup_theme', array(  $this, 'after_setup_theme' ) );  // AFTER THE THEME HAS BEEN ACTIVATED
+
+    add_action( 'widgets_init', array( $this, 'widgets_init' ) );  // INITIALIZE ALL THE WIDGETS IN THE SIDEBAR
+
+    add_filter( 'excerpt_length', function( $length ){ return 20; } );  // EXCERPT LENGTH
+
+    add_filter( 'excerpt_more', function( $more ){ return '&hellip;'; } );  // EXCERPT MORE
+
+    add_filter( 'posts_search', array( $this, 'fii_posts_search' ), 500, 2 );  // LIMIT SEARCH TO POST TITLES
+
+    /* ADD SOW FROM THE THEME */
+    add_action('siteorigin_widgets_widget_folders', function( $folders ){
+      $folders[] = FII_THEME_PATH . '/so-widgets/';
+      return $folders;
+    });
+
   }
 
   function assets() {
@@ -34,8 +84,74 @@ class FII_THEME {
 
   }
 
+  function after_setup_theme(){
+
+    // REGISTER THEME MENUS
+    register_nav_menus( array(
+      'primary' 	  => __( 'Primary Menu', 'fii' ),
+      'stories_1' 	=> __( 'Stories Menu 1', 'fii' ),
+      'stories_2' 	=> __( 'Stories Menu 2', 'fii' ),
+      'stories_3' 	=> __( 'Stories Menu 3', 'fii' ),
+      'stories_4' 	=> __( 'Stories Menu 4', 'fii' ),
+      'stories_5' 	=> __( 'Stories Menu 5', 'fii' )
+    ) );
+
+
+    // REGISTER THEME SUPPORTS
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'responsive-embeds' );
+    add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-slider' );
+
+    show_admin_bar(false);  //HIDE ADMIN BAR FROM THE FRONTEND
+
+  }
+
+  function widgets_init() {
+    foreach( $this->sidebars as $id => $sidebar ) {
+      $sidebar['id'] = $id;
+      $this->register_sidebar( $sidebar );
+    }
+  }
+
+  function register_sidebar( $sidebar ) {
+    register_sidebar( array(
+      'name' 			    => $sidebar['name'],
+      'id' 			      => $sidebar['id'],
+      'description' 	=> $sidebar['description'],
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget' 	=> "</aside>",
+      'before_title' 	=> '<h3>',
+      'after_title' 	=> '</h3>'
+    ) );
+  }
+
+  function fii_posts_search( $search, $wp_query ){
+    global $wpdb;
+
+    if ( empty( $search ) ) return $search; // skip processing - no search term in query
+
+    $q = $wp_query->query_vars;
+    $n = ! empty( $q['exact'] ) ? '' : '%';
+
+    $search =
+    $searchand = '';
+
+    foreach ( (array) $q['search_terms'] as $term ) {
+      $term = esc_sql( $wpdb->esc_like( $term ) );
+      $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
+      $searchand = ' AND ';
+    }
+
+    if ( ! empty( $search ) ) {
+      $search = " AND ({$search}) ";
+      if ( ! is_user_logged_in() ) $search .= " AND ($wpdb->posts.post_password = '') ";
+    }
+
+    return $search;
+  }
+
 }
 
-global $fii_theme;
-
-$fii_theme = new FII_THEME;
+FII_THEME::getInstance();

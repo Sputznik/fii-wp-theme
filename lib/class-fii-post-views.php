@@ -1,8 +1,8 @@
 <?php
 
-class FII_POST_VIEWS {
+class FII_POST_VIEWS extends FII_BASE {
 
-	var $count_meta_key;
+	private $count_meta_key;
 
 	function __construct() {
 
@@ -63,4 +63,4 @@ class FII_POST_VIEWS {
 
 }
 
-new FII_POST_VIEWS;
+FII_POST_VIEWS::getInstance();

@@ -1,42 +1,11 @@
 <?php
 
-include('fii-widgets.php');
-
-/* EXCERPT LENGTH */
-add_filter( 'excerpt_length', function( $length ){
-  return 20;
-});
-
-/* EXCERPT MORE */
-add_filter( 'excerpt_more', function( $more ){
-	return '&hellip;';
-});
-
+/* RETURNS SIDEBAR BASED ON ID */
 add_action( 'fii_sidebar', function( $fii_sidebar_id ){
 	if( is_active_sidebar( $fii_sidebar_id ) && $fii_sidebar_id ){
 		dynamic_sidebar( $fii_sidebar_id );
   }
 });
-
-/* NESTED BREADCRUMB */
-if ( ! function_exists( 'fii_nested_breadcrumb' ) ) {
-	function fii_nested_breadcrumb( $cat_id ) {
-		$level  = '';
-		$parent = get_term( $cat_id, 'category' );
-
-		if( is_wp_error( $parent ) ){ return ''; }
-
-		$name = $parent->name;
-
-		if ( $parent->parent && ( $parent->parent != $parent->term_id ) ) {
-      $level .= fii_nested_breadcrumb( $parent->parent );
-		}
-
-		$level .= '<span><a class="crumb" href="' . esc_url( get_category_link( $parent->term_id ) ) . '">' . $name . '</a></span><i class="fa fa-angle-right"></i>';
-
-		return $level;
-	}
-}
 
 /* HEADER MENU ATTRIBUTES */
 add_action('fii_nav_menu', function(){
@@ -77,37 +46,3 @@ add_action('fii_nav_menu', function(){
 	wp_nav_menu( $fii_nav_menu_options );
 
 });
-
-/* CHECK IF THE POST HAS FEATURED IMAGE */
-if ( ! function_exists( 'fii_has_featured_img' ) ) {
-  function fii_has_featured_img() {
-    return !empty( get_the_post_thumbnail() ) ? true : false;
-  }
-}
-
-/* LIMIT SEARCH TO POST TITLES */
-add_filter( 'posts_search', function( $search, $wp_query ){
-  global $wpdb;
-
-  if ( empty( $search ) ) return $search; // skip processing - no search term in query
-
-  $q = $wp_query->query_vars;
-  $n = ! empty( $q['exact'] ) ? '' : '%';
-
-  $search =
-  $searchand = '';
-
-  foreach ( (array) $q['search_terms'] as $term ) {
-    $term = esc_sql( $wpdb->esc_like( $term ) );
-    $search .= "{$searchand}($wpdb->posts.post_title LIKE '{$n}{$term}{$n}')";
-    $searchand = ' AND ';
-  }
-
-  if ( ! empty( $search ) ) {
-    $search = " AND ({$search}) ";
-    if ( ! is_user_logged_in() ) $search .= " AND ($wpdb->posts.post_password = '') ";
-  }
-
-  return $search;
-
-}, 500, 2 );

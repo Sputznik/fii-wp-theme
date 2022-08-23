@@ -1,6 +1,6 @@
 <?php
 
-class FII_SHORTCODE {
+class FII_SHORTCODE extends FII_BASE {
 
     public function __construct() {
       add_shortcode( 'fii_read', array( $this, 'fii_read' ) );
@@ -41,4 +41,4 @@ class FII_SHORTCODE {
     }
 }
 
-new FII_SHORTCODE;
+FII_SHORTCODE::getInstance();

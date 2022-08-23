@@ -25,7 +25,7 @@
           <a href="<?php _e( $author_url );?>"><?php echo $author_name;?></a>
         <?php else: echo $author_name; endif?>
       </div>
-      <p class="author-desc do-we need to show full bio or short bio??">
+      <p class="author-desc">
         <?php echo do_shortcode( $author_bio );?>
       </p>
       <ul class="author-social list-unstyled">
