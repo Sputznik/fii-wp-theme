@@ -33,7 +33,13 @@
           <?php
             $url = '';
             if( $fii_author['type'] == 'user' ){
-              $url = get_user_meta( $fii_author['id'], 'molongui_author_'.$slug, true );
+              $url = get_user_meta( $fii_author['id'], 'molongui_author_'.$slug, true ); // CHECK FOR MOLONGUI USER META
+
+              // CHECK FOR PREVIOUSLY USED THEME BASED USER META IF MOLONGUI USER META IS EMPTY
+              if( !$url ){
+                $url = get_user_meta( $fii_author['id'], $slug, true );
+              }
+
             } else{
               $url = get_post_meta( $fii_author['id'], '_molongui_guest_author_'.$slug, true );
             }
