@@ -3,10 +3,10 @@
  * The template for displaying single post content.
  */
 ?>
-<div class="editors-note fii-dec-af">
+<!-- <div class="editors-note fii-dec-af">
   <span class="title">» Editor’s Note: </span>
   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-</div>
+</div> -->
 <div class="single-post-content"><?php the_content(); ?></div>
 <?php if( FII_UTIL::fii_has_featured_img() ): $feat_img_src = get_post( get_post_thumbnail_id( $post->ID ) )->post_content;
 if( strlen( trim( $feat_img_src ) ) > 0  ): ?>
