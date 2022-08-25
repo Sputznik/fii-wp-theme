@@ -6,7 +6,7 @@ get_header();
 $category = $wp_query->get_queried_object();
 $description = $category->category_description;
 ?>
-<div class="container category-page">
+<div class="container wrapper-margin">
   <div class="category-header">
     <?php
       if( $category->parent == 0 ) {

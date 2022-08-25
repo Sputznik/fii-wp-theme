@@ -26,7 +26,7 @@ $current_author_type = !$is_current_author_guest ? 'user' : 'guest';
 <?php endif; ?>
 <?php $shortcode_str = do_shortcode( FII_MOLONGUI::fii_get_author_posts( $current_author_id, $current_author_type ) ); ?>
 <?php if( strlen( $shortcode_str ) > 0 ): ?>
-  <div class="container author-page">
+  <div class="container wrapper-margin">
     <div class="orbit-posts-wrapper">
       <h2>Published Posts</h2>
       <?php echo $shortcode_str; ?>

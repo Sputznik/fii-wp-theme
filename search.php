@@ -6,7 +6,7 @@
 	$search_str = get_search_query();
 ?>
 
-<div class="container search-page">
+<div class="container search-page wrapper-margin">
 	<?php if ( have_posts() ) : ?>
 		<h1 class="page-title">
 			Search Results <?php if( strlen( trim( $search_str ) ) != 0 ){ printf( esc_html__( 'for: "%s"', 'fii' ), $search_str ); }?>

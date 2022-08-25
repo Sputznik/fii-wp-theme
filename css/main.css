@@ -245,10 +245,6 @@ hr {
 /* PRIMARY MENU */
 #fii-navigation{
   height: 100px;
-  /* -webkit-box-shadow: 0 3px 3px 0px rgb(0 0 0 / 25%);
-	   -moz-box-shadow: 0 3px 3px 0px rgb(0 0 0 / 25%);
-	        box-shadow: 0 3px 3px 0px rgb(0 0 0 / 25%); */
-
   -webkit-box-shadow: 0 0.5px 2px 0px rgba(0, 0, 0, 0.15);
 	   -moz-box-shadow: 0 0.5px 2px 0px rgba(0, 0, 0, 0.15);
 	        box-shadow: 0 0.5px 2px 0px rgba(0, 0, 0, 0.15);
@@ -272,6 +268,7 @@ hr {
   width: 100%;
   max-width: 80px;
   height: 80px;
+  margin-left: -3px;
 }
 
 #fii-navigation .navbar-buttons {
@@ -401,11 +398,9 @@ hr {
 }
 
 /* MEGA DROPDOWN */
-
-/* REFACTOR ALREADY USED IN THE NORMAL DROPDOWN */
 #fii-navigation .mega-dropdown-menu {
-  left: 16px;
-  width: 1170px;
+  left: 14px;
+  width: 1172px;
 }
 
 #fii-navigation .mega-dropdown-menu > .container {
@@ -991,7 +986,6 @@ hr {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  /* padding: 0 15px; */
 }
 
 .fii-vid-sl-wrap,
@@ -1121,16 +1115,6 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 /* FII LOGO SLIDER */
 .fii-logo-slider .logo-slider-item {
   margin: 0 20px;
-}
-
-/* CATEGORIES */
-.category-page,
-.search-page,
-.tag-page,
-.archive-page,
-.author-page {
-  margin-top: 50px;
-  margin-bottom: 60px;
 }
 
 .category-sidebar,

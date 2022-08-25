@@ -5,7 +5,7 @@
 get_header();
 $tag = get_queried_object();
 ?>
-<div class="container tag-page">
+<div class="container wrapper-margin">
   <div class="tag-header">
     <h1 class="page-title"><?php _e( $tag->name ); ?></h1>
     <div class="page-description"><?php _e( $tag->description ); ?></div>
