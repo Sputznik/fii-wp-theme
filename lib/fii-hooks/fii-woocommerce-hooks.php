@@ -14,10 +14,9 @@ add_action( 'woocommerce_after_main_content', function(){ echo '</div>'; }, 50 )
 /* REMOVE BREADCRUMB FROM DEFAULT LOACATION */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 
-
-/*  RENAME HOME IN WOOCOMMERCE BREADCRUMB */
+/* REMOVE HOME LINK FROM WOOCOMMERCE BREADCRUMB */
 add_filter( 'woocommerce_breadcrumb_defaults', function( $defaults ){
-  $defaults['home'] = 'Shop';
+  unset( $defaults['home'] );
 	return $defaults;
 } );
 
