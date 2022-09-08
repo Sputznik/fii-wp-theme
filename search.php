@@ -9,7 +9,7 @@
 <div class="container search-page wrapper-margin">
 	<?php if ( have_posts() ) : ?>
 		<h1 class="page-title">
-			Search Results <?php if( strlen( trim( $search_str ) ) != 0 ){ printf( esc_html__( 'for: "%s"', 'fii' ), $search_str ); }?>
+			Search Results <?php if( strlen( trim( $search_str ) ) != 0 ){ printf( esc_html__( 'for: "%s"', 'fii-wp-theme' ), $search_str ); }?>
 		</h1>
 		<div class="orbit-posts-wrapper fii-dec-af">
 			<?php
@@ -18,8 +18,8 @@
 		</div>
 		<?php else : ?>
 		<div class="fii-nothing-found">
-			<h2><?php _e( 'Sorry, we couldn’t find any matching results.', 'fii' ); ?></h2>
-			<button data-behaviour="fii-search-modal"><?php _e( 'Search Again', 'fii' );?></button>
+			<h2><?php _e( 'Sorry, we couldn’t find any matching results.', 'fii-wp-theme' ); ?></h2>
+			<button data-behaviour="fii-search-modal"><?php _e( 'Search Again', 'fii-wp-theme' );?></button>
 		</div>
 	<?php endif; ?>
 </div>

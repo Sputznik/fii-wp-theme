@@ -11,28 +11,28 @@ class FII_THEME extends FII_BASE {
 
     $this->sidebars = array(
       'fii-topbar'  	=> array(
-        'name' 				=> __( 'FII Topbar', 'fii' ),
-        'description' => __( 'Appears above the primary navigation menu', 'fii' )
+        'name' 				=> __( 'FII Topbar', 'fii-wp-theme' ),
+        'description' => __( 'Appears above the primary navigation menu', 'fii-wp-theme' )
       ),
       'fii-single-post-sidebar'	=> array(
-        'name' 				=> __( 'Single Post Sidebar', 'fii' ),
-        'description' => __( 'Appears in the single post page before the pre-footer area', 'fii' )
+        'name' 				=> __( 'Single Post Sidebar', 'fii-wp-theme' ),
+        'description' => __( 'Appears in the single post page before the pre-footer area', 'fii-wp-theme' )
       ),
       'fii-support-work'	=> array(
-        'name' 				=> __( 'Support the work', 'fii' ),
-        'description' => __( 'Appears in the single post page before the social share area', 'fii' )
+        'name' 				=> __( 'Support the work', 'fii-wp-theme' ),
+        'description' => __( 'Appears in the single post page before the social share area', 'fii-wp-theme' )
       ),
       'fii-category-sidebar'	=> array(
-        'name' 				=> __( 'Category Sidebar', 'fii' ),
-        'description' => __( 'Appears in the category page before the footer area', 'fii' )
+        'name' 				=> __( 'Category Sidebar', 'fii-wp-theme' ),
+        'description' => __( 'Appears in the category page before the footer area', 'fii-wp-theme' )
       ),
       'fii-shop-header'	=> array(
-        'name' 				=> __( 'Shop Page Header', 'fii' ),
-        'description' => __( 'Appears in the shop page after the primary navigation', 'fii' )
+        'name' 				=> __( 'Shop Page Header', 'fii-wp-theme' ),
+        'description' => __( 'Appears in the shop page after the primary navigation', 'fii-wp-theme' )
       ),
       'footer-sidebar'	=> array(
-        'name' 				=> __( 'Footer', 'fii' ),
-        'description' => __( 'Appears in the footer area', 'fii' )
+        'name' 				=> __( 'Footer', 'fii-wp-theme' ),
+        'description' => __( 'Appears in the footer area', 'fii-wp-theme' )
       )
     );
 
@@ -88,12 +88,12 @@ class FII_THEME extends FII_BASE {
 
     // REGISTER THEME MENUS
     register_nav_menus( array(
-      'primary' 	  => __( 'Primary Menu', 'fii' ),
-      'stories_1' 	=> __( 'Stories Menu 1', 'fii' ),
-      'stories_2' 	=> __( 'Stories Menu 2', 'fii' ),
-      'stories_3' 	=> __( 'Stories Menu 3', 'fii' ),
-      'stories_4' 	=> __( 'Stories Menu 4', 'fii' ),
-      'stories_5' 	=> __( 'Stories Menu 5', 'fii' )
+      'primary' 	  => __( 'Primary Menu', 'fii-wp-theme' ),
+      'stories_1' 	=> __( 'Stories Menu 1', 'fii-wp-theme' ),
+      'stories_2' 	=> __( 'Stories Menu 2', 'fii-wp-theme' ),
+      'stories_3' 	=> __( 'Stories Menu 3', 'fii-wp-theme' ),
+      'stories_4' 	=> __( 'Stories Menu 4', 'fii-wp-theme' ),
+      'stories_5' 	=> __( 'Stories Menu 5', 'fii-wp-theme' )
     ) );
 
 
