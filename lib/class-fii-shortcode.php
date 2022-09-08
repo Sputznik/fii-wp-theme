@@ -14,7 +14,7 @@ class FII_SHORTCODE extends FII_BASE {
       ), $atts );
       ob_start(); ?>
       <div class="fii-read fii-dec-bf fii-dec-af">
-        <span class="title">» Also read: </span>
+        <span class="title">» <?php _e( 'Also read', 'fii-wp-theme' );?>: </span>
         <a href="<?php _e( $args['url'] );?>"><?php _e( $args['text'] );?></a>
       </div>
 

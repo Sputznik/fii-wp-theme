@@ -11,7 +11,7 @@
         <div class="video-slider-inner">
           <div class="video-meta">
             <h3 class="mt-0 mb-0"><?php _e( $slide['video_title'] ); ?></h3>
-            <p class="mb-0">View full playlist »</p>
+            <p class="mb-0"><?php _e( 'View full playlist', 'fii-wp-theme' );?> »</p>
           </div>
           <div class="fii-thumbnail-bg" <?php if( isset( $image_url ) && $image_url ){ echo 'style="background-image:url('.$image_url.');"'; } ?>></div>
         </div>
