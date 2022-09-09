@@ -612,6 +612,10 @@ hr {
 .single-post-content a{ color: #cf2e2e; }
 .single-post-content a:hover { text-decoration: underline; }
 
+.single-post .post-tags {
+  margin: 20px 0;
+}
+
 .single .fii-read,
 .single .editors-note,
 .single .feat-img-note,
