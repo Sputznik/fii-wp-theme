@@ -8,6 +8,6 @@
     </div>
   <?php endif; ?>
     <p class="author">By <?php FII_MOLONGUI::fii_author_posts_link( $post->ID ); ?></p>
-    <span class="meta"><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min"]'); ?> | <?php the_time( 'F j, Y' );?></span>
+    <span class="meta"><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min"]'); ?> | <?php the_time( 'M j, Y' );?></span>
   </div>
 </div>

@@ -24,7 +24,7 @@
       By <a href="<?php echo $author_url;?>" title="<?php _e( 'View all posts by '. $author_name );?>"><?php echo $author_name; ?></a>
     </span>
     <span class="dot"></span>
-    <span class="post-date"><?php _e( the_time( 'F j, y' ) );?></span>
+    <span class="post-date"><?php _e( the_time( 'M j, y' ) );?></span>
     <span class="dot"></span>
     <span><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min"]'); ?></span>
   </div>
