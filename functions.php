@@ -13,6 +13,7 @@ if( !defined( 'FII_THEME_URI' ) ) {
 $inc_files = array(
   'lib/class-fii-base.php',
   'lib/class-fii-theme.php',
+  'lib/fii-admin/class-fii-admin.php',
   'lib/wp-bootstrap-navwalker.php',
   'lib/fii-hooks/fii-hooks.php',
   'lib/class-fii-shortcode.php',

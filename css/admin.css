@@ -1,0 +1,11 @@
+/* ATTACHMENT FIELDS */
+#post-body-content .compat-attachment-fields {
+  width: 100%;
+  border-spacing: 0;
+}
+
+#post-body-content .compat-attachment-fields .compat-field-source_text input[type=text],
+#post-body-content .compat-attachment-fields .compat-field-source_link input[type=text] {
+  width: 100%;
+  margin: 0;
+}
