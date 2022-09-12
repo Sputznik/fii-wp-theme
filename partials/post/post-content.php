@@ -11,12 +11,6 @@
 <?php if( has_tag() ):?>
   <div class="post-tags">Tagged Under: <?php the_tags( '', '', '' ); ?></div>
 <?php endif;?>
-<?php if( FII_UTIL::fii_has_featured_img() ): $feat_img_src = get_post( get_post_thumbnail_id( $post->ID ) )->post_content;
-if( strlen( trim( $feat_img_src ) ) > 0  ): ?>
-<div class="feat-img-note fii-dec-bf fii-dec-af">
-  <span class="title">» Featured Image sources: </span><?php _e( $feat_img_src );?>
-</div>
-<?php endif; endif; ?>
 <?php FII_MOLONGUI::fii_post_author_box(); ?>
 <?php do_action( 'fii_sidebar', 'fii-support-work' );?>
 <div class="fii-social-share"><span class="title">» Share this </span><?php echo do_shortcode('[addtoany]');?></div>

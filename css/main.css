@@ -618,7 +618,6 @@ hr {
 
 .single .fii-read,
 .single .editors-note,
-.single .feat-img-note,
 .single-post-content {
   font-size: 16px;
   line-height: 26px;
@@ -628,6 +627,7 @@ hr {
   height: 100%;
   width: 100%;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .single .featured-img::before,
@@ -673,7 +673,6 @@ hr {
 .fii-breadcrumb i { margin: 0 6px 0 10px; }
 
 .single .editors-note,
-.single .feat-img-note,
 .single .fii-read a {
   color: #808080;
 }
@@ -681,13 +680,22 @@ hr {
 .single .follow-channel a,
 .single .fii-read > .title,
 .single .editors-note > .title,
-.single .feat-img-note > .title,
 .single .fii-social-share > .title {
   color: #cf2e2e;
   font-weight: 700;
 }
 
-.single .feat-img-note a:hover {
+.feat-img-src {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  background-color: rgba(0,0,0,0.7);
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.feat-img-src a:hover {
   text-decoration: underline;
 }
 
