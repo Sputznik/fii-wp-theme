@@ -8,7 +8,9 @@ get_header();
   <div id="fii-main-content">
     <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
       <h1 class="job-title"><?php the_title();?></h1>
-      <?php get_template_part('partials/post/featured-img'); ?>
+      <?php if( FII_UTIL::fii_has_featured_img() ): $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>
+        <div class="featured-img" style="background-image:url(<?php _e( $image_url );?>);" role="img" aria-label="<?php _e( get_the_title( $post->ID ) ); ?>"></div>
+      <?php endif;?>
       <div class="single-post-content"><?php the_content(); ?></div>
     <?php endwhile; endif; ?>
     <?php do_action( 'fii_sidebar', 'fii-support-work' );?>
