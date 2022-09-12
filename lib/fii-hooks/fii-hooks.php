@@ -9,10 +9,11 @@ add_action( 'fii_sidebar', function( $fii_sidebar_id ){
 
 /* HEADER MENU ATTRIBUTES */
 add_action('fii_nav_menu', function(){
-
+	global $fii_customize;
   $menu_items = array('stories_1','stories_2','stories_3','stories_4','stories_5');
+	$stories = $fii_customize->get_theme_option( 'translation', 'stories_menu_item', 'Stories' );
   $html = '<li class="mega-dropdown">
-            <a title="Stories" href="#" class="dropdown-toggle" aria-haspopup="true">Stories <span class="caret"></span></a>
+            <a title="'.$stories.'" href="#" class="dropdown-toggle" aria-haspopup="true">'.$stories.' <span class="caret"></span></a>
             <div class="mega-dropdown-menu"><div class="container">';
   foreach ( $menu_items as $item ) {
     $current_item = wp_nav_menu( array(

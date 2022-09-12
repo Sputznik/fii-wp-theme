@@ -8,8 +8,8 @@
 ?>
 <?php if( FII_UTIL::fii_has_featured_img() ): $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>
   <div class="featured-img" style="background-image:url(<?php _e( $image_url );?>);" role="img" aria-label="<?php _e( get_the_title( $post->ID ) ); ?>">
-    <?php if( $feat_img_src_text ): ?>
-      <div class="feat-img-src">» Featured Image source:
+    <?php if( $feat_img_src_text ): global $fii_customize; ?>
+      <div class="feat-img-src">» <?php echo $fii_customize->get_theme_option( 'translation', 'feat_img_src', 'Featured Image source' ); ?>:
         <?php if( !$feat_img_src_link ){ echo $feat_img_src_text; } else { _e("<a href='$feat_img_src_link'>$feat_img_src_text</a>"); } ?>
       </div>
     <?php endif;?>

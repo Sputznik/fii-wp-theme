@@ -8,13 +8,14 @@ class FII_SHORTCODE extends FII_BASE {
     }
 
     public function fii_read( $atts ) {
+      global $fii_customize;
       $args = shortcode_atts( array(
         'text'  => 'Link Text',
         'url'   => '#'
       ), $atts );
       ob_start(); ?>
       <div class="fii-read fii-dec-bf fii-dec-af">
-        <span class="title">» Also read: </span>
+        <span class="title">» <?php echo $fii_customize->get_theme_option( 'translation', 'also_read', 'Also read' ); ?>: </span>
         <a href="<?php _e( $args['url'] );?>"><?php _e( $args['text'] );?></a>
       </div>
 

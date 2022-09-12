@@ -28,7 +28,8 @@ $current_author_type = !$is_current_author_guest ? 'user' : 'guest';
 <?php if( strlen( $shortcode_str ) > 0 ): ?>
   <div class="container wrapper-margin">
     <div class="orbit-posts-wrapper">
-      <h2>Published Posts</h2>
+      <?php global $fii_customize; ?>
+      <h2><?php echo $fii_customize->get_theme_option( 'translation', 'published_posts', 'Published Posts' ); ?></h2>
       <?php echo $shortcode_str; ?>
     </div>
   </div>
