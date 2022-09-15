@@ -11,6 +11,10 @@ class FII_POST_VIEWS extends FII_BASE {
 		add_action( 'wp_ajax_fii_view_count', array( $this, 'update_count_ajax' ) );
 		add_action( 'wp_ajax_nopriv_fii_view_count', array( $this, 'update_count_ajax' ) );
 
+		// POST VIEWS SUPPORT
+    add_filter( 'manage_post_posts_columns', array( $this, 'manage_post_posts_columns' ) );
+    add_action( 'manage_post_posts_custom_column', array( $this, 'manage_post_posts_custom_column' ), 10, 2 );
+
 	}
 
 	function update_count_ajax(){
@@ -60,6 +64,17 @@ class FII_POST_VIEWS extends FII_BASE {
 		$count = get_post_meta( $postid, $this->count_meta_key, true );
 		return (int) ( !empty( $count ) ? $count : 0 );
 	}
+
+	function manage_post_posts_columns( $columns ) {
+    $columns['fii_post_views'] = 'Views';
+    return $columns;
+  }
+
+  function manage_post_posts_custom_column( $column_name, $post_id ){
+    if( $column_name === 'fii_post_views' ){
+      echo $this->get_count( $post_id );
+    }
+  }
 
 }
 
