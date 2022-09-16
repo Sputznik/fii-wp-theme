@@ -4,6 +4,7 @@
  */
 get_header();
 
+global $fii_customize;
 $date_query = '';
 $archive_query = $wp_query->query;
 if( is_day()  ) {
@@ -16,7 +17,7 @@ if( is_day()  ) {
 
 ?>
 <div class="container archive-page wrapper-margin">
-  <h1 class="page-title">Archive</h1>
+  <h1 class="page-title"><?php echo $fii_customize->get_theme_option( 'translation', 'archive_headline', 'Archive' ); ?></h1>
   <div class="orbit-posts-wrapper">
     <?php echo do_shortcode("[orbit_query posts_per_page='9' style='grid3' date_query='".$date_query."' pagination='1' ]"); ?>
   </div>

@@ -39,6 +39,21 @@
         'default' => 'Follow FII channels on <a href="https://www.youtube.com/channel/UCh9Z5tOOo7D3Jb22K6gItHQ" target="_blank" rel="noopener">Youtube</a> and
 											<a href="https://t.me/feminisminindia" target="_blank" rel="noopener">Telegram</a> for latest updates.'
       ),
+			'archive_headline' => array(
+				'type'    => 'text',
+				'label'   => 'Archive Page Headline',
+				'default' => 'Archive'
+			),
+			'orbit_load_more' => array(
+				'type'    => 'text',
+				'label'   => 'Load More Button',
+				'default' => 'Load More'
+			),
+			'orbit_loading_more' => array(
+				'type'    => 'text',
+				'label'   => 'Loading More Button',
+				'default' => 'Loading ...'
+			)
     );
 
 		global $fii_customize;
