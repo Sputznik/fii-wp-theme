@@ -38,6 +38,19 @@
 			return $default;
 		}
 
+		function get_error_template(){
+			$pages_list = array();
+			$pages = get_pages( array('post_status'  => 'publish') );
+
+			$pages_list['default'] = 'Default';
+
+			foreach ( $pages as $page ) {
+				$pages_list[$page->post_name] = $page->post_title;
+			}
+
+			return $pages_list;
+		}
+
 		function panel( $wp_customize, $panel_id, $panel_label ){
 
 			$wp_customize->add_panel( $panel_id, array(
@@ -58,6 +71,17 @@
 	    	'description' 	=> $section_desc,
 	    	'panel'					=> $panel_id
 			));
+
+		}
+
+		/* wrap add setting function of wp customize */
+		function add_setting( $wp_customize, $setting_id, $default_setting ){
+
+			$wp_customize->add_setting( $setting_id, array(
+  			'default' 		=> $default_setting,
+  			'transport'   => 'postMessage',
+  			'type'				=> 'option'
+  		));
 
 		}
 
@@ -99,14 +123,19 @@
 
 		}
 
-		/* wrap add setting function of wp customize */
-		function add_setting( $wp_customize, $setting_id, $default_setting ){
+		function dropdown( $wp_customize, $section_id, $setting_id, $setting_label, $default_setting, $choices ){
 
-			$wp_customize->add_setting( $setting_id, array(
-  			'default' 		=> $default_setting,
-  			'transport'   => 'postMessage',
-  			'type'				=> 'option'
-  		));
+			$setting_id = $this->get_option_slug( $setting_id );
+
+			$this->add_setting( $wp_customize, $setting_id, $default_setting );
+
+			$wp_customize->add_control( $setting_id, array(
+				'type' 			=> 'select',
+				'label'    	=> $setting_label,
+				'section'  	=> $section_id,
+				'settings' 	=> $setting_id,
+				'choices' 	=> $choices
+			));
 
 		}
 

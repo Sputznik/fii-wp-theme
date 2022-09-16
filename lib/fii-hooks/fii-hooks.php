@@ -47,3 +47,8 @@ add_action('fii_nav_menu', function(){
 	wp_nav_menu( $fii_nav_menu_options );
 
 });
+
+// DISABLE SOCIAL SHARE ON 404 PAGE
+add_filter( 'addtoany_sharing_disabled', function(){
+	if( is_404() ){ return true; }
+} );
