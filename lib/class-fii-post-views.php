@@ -93,18 +93,26 @@ class FII_POST_VIEWS extends FII_BASE {
 
 		$post_in = get_transient( $transient_name );
 
+		$defaults = array(
+			'post_status' 				=> 'publish',
+			'style'								=> $atts['style'] ? $atts['style'] : 'list',
+			'posts_per_page'			=> $atts['posts_per_page'] ? $atts['posts_per_page'] : '7',
+			'fields'         			=> 'ids', // Reduce memory footprint
+			'cache'	 							=> '6',
+			'meta_key'            => $this->count_meta_key,
+			'order'               => 'DESC',
+			'orderby'             => 'meta_value_num'
+		);
+
+		$args = array_merge( $args, $defaults );
+
 		if ( false === $post_in ) {
 
 			$query = new WP_Query( $args );
 
 			if( $query->have_posts() ){
 
-        $post_ids = array();
-
-        while( $query->have_posts() ){
-          $query->the_post();
-          $post_ids[] = get_the_ID();
-        }
+				$post_ids = $query->posts;
 
         wp_reset_postdata();
 
@@ -142,44 +150,20 @@ class FII_POST_VIEWS extends FII_BASE {
 	function fii_popular_posts( $atts ){
 		$atts = shortcode_atts( $this->defaultAtts(), $atts, 'fii_popular_posts' );
 
-		$args =  array(
-			'post_status' 				=> 'publish',
-			'posts_per_page'			=> $atts['posts_per_page'] ? $atts['posts_per_page'] : '7',
-			'style'			 					=> $atts['style'] ? $atts['style'] : 'list',
-			'cache'	 							=> '6',
-			'meta_key'            => $this->count_meta_key,
-	    'order'               => 'DESC',
-	    'orderby'             => 'meta_value_num'
-		);
-
 		ob_start();
-
-		$this->show_fii_posts( 'fii_pp', $atts, $args );
-
+		$this->show_fii_posts( 'fii_pp', $atts, array() );
 		return ob_get_clean();
-
 	}
 
 	function fii_trending_posts( $atts ){
 		$atts = shortcode_atts( $this->defaultAtts(), $atts, 'fii_trending_posts' );
-
 		$args =  array(
-			'post_status' 				=> 'publish',
-			'posts_per_page'			=> $atts['posts_per_page'] ? $atts['posts_per_page'] : '7',
-			'style'			 					=> $atts['style'] ? $atts['style'] : 'list',
-			'cache'	 							=> '6',
-			'meta_key'            => $this->count_meta_key,
-			'order'               => 'DESC',
-			'orderby'             => 'meta_value_num',
-			'date_query' 					=> array( array( 'after' => '7 days ago' ) )
+			'date_query' 	=> array( array( 'after' => '7 days ago' ) )
 		);
 
 		ob_start();
-
 		$this->show_fii_posts( 'fii_tp', $atts, $args );
-
 		return ob_get_clean();
-
 	}
 
 }
