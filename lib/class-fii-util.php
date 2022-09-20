@@ -25,4 +25,19 @@ class FII_UTIL {
     return !empty( get_the_post_thumbnail() ) ? true : false;
   }
 
+  // PASS ARRAY AS ARGUMENT TO RETURN UNIQUE ID
+  public static function getUniqueID( $data ){ return substr( md5( json_encode( $data ) ), 0, 8 ); }
+
+  // PASS BASE NAME AND ARGUMENTS OF AN ARRAY TO RETURN UNIQUE TRANSIENT KEY
+  public static function getTransientKey( $base_name, $args ){ return $base_name . self::getUniqueID( $args ); }
+
+  public static function getShortcodeString( $shortcode_str, $atts ){
+    $shortcode_str = "[$shortcode_str";
+    foreach ($atts as $slug => $value) {
+      $shortcode_str .= " $slug='$value'";
+    }
+    $shortcode_str .= "]";
+    return $shortcode_str;
+  }
+
 }

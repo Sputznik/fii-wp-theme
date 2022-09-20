@@ -15,6 +15,9 @@ class FII_POST_VIEWS extends FII_BASE {
     add_filter( 'manage_post_posts_columns', array( $this, 'manage_post_posts_columns' ) );
     add_action( 'manage_post_posts_custom_column', array( $this, 'manage_post_posts_custom_column' ), 10, 2 );
 
+		// SHORTCODES
+		add_shortcode( 'fii_popular_posts', array( $this, 'fii_popular_posts' ) );
+
 	}
 
 	function update_count_ajax(){
@@ -75,6 +78,86 @@ class FII_POST_VIEWS extends FII_BASE {
       echo $this->get_count( $post_id );
     }
   }
+
+	function defaultAtts(){
+		return array(
+			'posts_per_page' 	=> '7',
+			'style'			 			=> 'list'
+		);
+	}
+
+	function show_fii_posts( $cache_key, $atts, $args ){
+
+		$transient_name = FII_UTIL::getTransientKey( $cache_key, $atts );
+
+		$post_in = get_transient( $transient_name );
+
+		if ( false === $post_in ) {
+
+			$query = new WP_Query( $args );
+
+			if( $query->have_posts() ){
+
+        $post_ids = array();
+
+        while( $query->have_posts() ){
+          $query->the_post();
+          $post_ids[] = get_the_ID();
+        }
+
+        wp_reset_postdata();
+
+        if( count( $post_ids ) ){
+
+					$post_in = implode( ',', $post_ids );
+
+          //setting transient for in seconds -- num_hour * HOUR_IN_SECONDS
+					$cache_time = (int) $args['cache'] * HOUR_IN_SECONDS;
+          set_transient( $transient_name , $post_in, $cache_time );
+        }
+
+      } // end have_posts
+
+		} // end $post_in
+
+		if( $post_in ){
+
+			// REMOVE ATTS THAT ARE NOT PART OF THE ORBIT QUERY
+			unset( $args['cache'] );
+			unset( $args['date_query'] );
+
+			$args['post__in'] = $post_in;
+
+			$orbit_query_shortcode = '';
+
+			$orbit_query_shortcode = FII_UTIL::getShortcodeString( 'orbit_query', $args );
+
+			echo do_shortcode( $orbit_query_shortcode );
+
+		}
+
+	}
+
+	function fii_popular_posts( $atts ){
+		$atts = shortcode_atts( $this->defaultAtts(), $atts, 'fii_popular_posts' );
+
+		$args =  array(
+			'post_status' 				=> 'publish',
+			'posts_per_page'			=> $atts['posts_per_page'] ? $atts['posts_per_page'] : '7',
+			'style'			 					=> $atts['style'] ? $atts['style'] : 'list',
+			'cache'	 							=> '6',
+			'meta_key'            => $this->count_meta_key,
+	    'order'               => 'DESC',
+	    'orderby'             => 'meta_value_num'
+		);
+
+		ob_start();
+
+		$this->show_fii_posts( 'fii_pp', $atts, $args );
+
+		return ob_get_clean();
+
+	}
 
 }
 
