@@ -17,6 +17,7 @@ class FII_POST_VIEWS extends FII_BASE {
 
 		// SHORTCODES
 		add_shortcode( 'fii_popular_posts', array( $this, 'fii_popular_posts' ) );
+		add_shortcode( 'fii_trending_posts', array( $this, 'fii_trending_posts' ) );
 
 	}
 
@@ -154,6 +155,28 @@ class FII_POST_VIEWS extends FII_BASE {
 		ob_start();
 
 		$this->show_fii_posts( 'fii_pp', $atts, $args );
+
+		return ob_get_clean();
+
+	}
+
+	function fii_trending_posts( $atts ){
+		$atts = shortcode_atts( $this->defaultAtts(), $atts, 'fii_trending_posts' );
+
+		$args =  array(
+			'post_status' 				=> 'publish',
+			'posts_per_page'			=> $atts['posts_per_page'] ? $atts['posts_per_page'] : '7',
+			'style'			 					=> $atts['style'] ? $atts['style'] : 'list',
+			'cache'	 							=> '6',
+			'meta_key'            => $this->count_meta_key,
+			'order'               => 'DESC',
+			'orderby'             => 'meta_value_num',
+			'date_query' 					=> array( array( 'after' => '7 days ago' ) )
+		);
+
+		ob_start();
+
+		$this->show_fii_posts( 'fii_tp', $atts, $args );
 
 		return ob_get_clean();
 
