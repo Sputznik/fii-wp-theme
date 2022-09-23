@@ -617,7 +617,6 @@ hr {
 }
 
 .single .fii-read,
-.single .editors-note,
 .single-post-content {
   font-size: 16px;
   line-height: 26px;
@@ -672,14 +671,12 @@ hr {
 .fii-breadcrumb a.crumb:hover { color: #cf2e2e; }
 .fii-breadcrumb i { margin: 0 6px 0 10px; }
 
-.single .editors-note,
 .single .fii-read a {
   color: #808080;
 }
 
 .single .follow-channel a,
 .single .fii-read > .title,
-.single .editors-note > .title,
 .single .fii-social-share > .title {
   color: #cf2e2e;
   font-weight: 700;
