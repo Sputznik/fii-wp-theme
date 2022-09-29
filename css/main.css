@@ -1545,6 +1545,23 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   margin-bottom: 30px;
 }
 
+/* FII PLUS ICON */
+.fii-plus-menu.dropdown > a > .caret,
+#mobile-nav .fii-plus-menu.dropdown > a.dropdown-toggle::after {
+  display: none;
+}
+
+.fii-plus-menu.dropdown > a.dropdown-toggle::after {
+  content: "\002B";
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#mobile-nav .fa-plus,
+#mobile-nav .fa-minus {
+  font-size: 14.63px;
+}
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,

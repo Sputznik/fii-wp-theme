@@ -32,32 +32,43 @@ jQuery(document).ready(function(){
       }
     }
 
-  	/* MOBILE NAVBAR */
-  	jQuery( '#mobile-nav .menu .dropdown > a, #mobile-nav .menu li.mega-dropdown > a' ).append( '<span class="menu-toggler"><i class="fas fa-angle-down"></i></span>' );
+  	/* APPEND MOBILE NAVBAR DROPDOWN ICON */
+  	jQuery( '#mobile-nav .menu .dropdown:not(".fii-plus-menu") > a, #mobile-nav .menu li.mega-dropdown > a' ).append( '<span class="menu-toggler" data-toggler-icon="caret"><i class="fas fa-angle-down"></i></span>' );
+    jQuery( '#mobile-nav .menu .fii-plus-menu.dropdown > a' ).append( '<span class="menu-toggler" data-toggler-icon="plus"><i class="fas fa-plus"></i></span>' );
 
-  	// TOGGLE MOBILE MENU
+  	// SHOW MOBILE NAV
   	jQuery('.navbar-toggler').on('click', function(){
   		jQuery('body' ).addClass('show-mobile-nav');
+  	});
+
+    // CLOSE MOBILE NAV
+  	jQuery('#close-mobile-nav').on('click', function(){
+  		jQuery('body').removeClass('show-mobile-nav');
   	});
 
   	// MENU TOGGLER
   	jQuery('#mobile-nav .menu-toggler').on('click', function(e){
   		e.preventDefault();
-  		var $this = jQuery( this );
+  		var $this = jQuery( this ),
+          $children = $this.children(),
+          icon_name = $this.data('toggler-icon'),
+          add_class    = "fa-angle-up",
+          remove_class = "fa-angle-down";
 
-  		if($this.children().hasClass('fa-angle-down')){
-  			$this.children().removeClass('fa-angle-down').addClass('fa-angle-up');
-  		}
-  		else{
-  			$this.children().removeClass('fa-angle-up').addClass('fa-angle-down');
+      // CHANGE THE ICON CLASSES BASED ON THE ICON_NAME
+      if( icon_name === 'plus' ){
+        add_class    = "fa-minus";
+        remove_class = "fa-plus";
+      }
+
+      // TOGGLER ICON
+      if( $children.hasClass( remove_class ) ){
+  			$children.removeClass( remove_class ).addClass( add_class );
+  		} else{
+  			$children.removeClass( add_class ).addClass( remove_class );
   		}
 
   		$this.parent().next().slideToggle( 'fast' );
-  	});
-
-  	// CLOSE MOBILE NAV
-  	jQuery('#close-mobile-nav').on('click', function(){
-  		jQuery('body').removeClass('show-mobile-nav');
   	});
 
   /* BACK TO TOP */
