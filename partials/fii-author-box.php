@@ -7,7 +7,8 @@
   $author_social = array(
     'facebook'  => 'facebook-f',
     'twitter'   => 'twitter',
-    'instagram' => 'instagram'
+    'instagram' => 'instagram',
+    'linkedin'  => 'linkedin-in'
   );
 ?>
 <div class="<?php _e( $fii_author['class'] );?>-author-box">
