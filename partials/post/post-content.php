@@ -4,6 +4,7 @@
  */
  global $fii_customize;
 ?>
+<?php do_action( 'fii_sidebar', 'fii-above-post-content' ); ?>
 <div class="single-post-content"><?php the_content(); ?></div>
 <?php if( has_tag() ):?>
   <div class="post-tags">Tagged Under: <?php the_tags( '', '', '' ); ?></div>

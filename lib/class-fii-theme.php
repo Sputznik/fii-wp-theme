@@ -18,6 +18,10 @@ class FII_THEME extends FII_BASE {
         'name' 				=> __( 'Single Post Sidebar', 'fii-wp-theme' ),
         'description' => __( 'Appears in the single post page before the pre-footer area', 'fii-wp-theme' )
       ),
+      'fii-above-post-content'	=> array(
+        'name' 				=> __( 'Above Single Post Content', 'fii-wp-theme' ),
+        'description' => __( 'Appears in the single post page before the post content', 'fii-wp-theme' )
+      ),
       'fii-support-work'	=> array(
         'name' 				=> __( 'Support the work', 'fii-wp-theme' ),
         'description' => __( 'Appears in the single post page before the social share area', 'fii-wp-theme' )
