@@ -11,6 +11,10 @@
 		<h1 class="page-title">
 			Search Results <?php if( strlen( trim( $search_str ) ) != 0 ){ printf( esc_html__( 'for: "%s"', 'fii-wp-theme' ), $search_str ); }?>
 		</h1>
+		<form role="search" method="get" class="searchbar-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" autocomplete="off">
+			<input class="search-input" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" />
+			<input class="search-submit" type="submit" value="<?php esc_html_e( 'Search', 'fii-wp-theme' ); ?>" />
+		</form>
 		<div class="orbit-posts-wrapper fii-dec-af">
 			<?php
 				 echo do_shortcode("[orbit_query posts_per_page='9' style='grid3' s='".$search_str."' pagination='1' ]");

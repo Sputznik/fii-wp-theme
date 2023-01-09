@@ -1562,6 +1562,34 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   font-size: 14.63px;
 }
 
+.search-page .searchbar-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.search-page .searchbar-form .search-input {
+  flex: 1;
+  height: 50px;
+  font-size: 16px;
+  padding: 6px 12px;
+  border: 1px solid #000000;
+  border-right: 0;
+}
+
+.search-page .searchbar-form .search-submit {
+  height: 50px;
+  border-width: 1px;
+  border-left: 0;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0px 16px;
+  border-color: #000000;
+  background-color: #000000;
+}
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,
