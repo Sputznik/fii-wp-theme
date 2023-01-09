@@ -94,8 +94,8 @@
 }
 
 @media( max-width: 767px ){
-  .woocommerce-page ul.products[class*=columns-] li.product {
-    width: 100%;
-    float: none;
+  .woocommerce ul.products[class*=columns-] li.product {
+    width: 100% !important;
+    float: none !important;
   }
 }
