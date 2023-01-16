@@ -58,6 +58,11 @@ class FII_THEME extends FII_BASE {
       return $folders;
     });
 
+    /* INCREASE POSTS_PER_PAGE FOR CATEGORY / TAG ARCHIVE */
+    add_action( 'pre_get_posts', function( $query ){
+      if( ! is_admin() && $query->is_main_query() && ( is_category() || is_tag() ) ) $query->set( 'posts_per_page', 15 );
+    });
+
   }
 
   function assets() {

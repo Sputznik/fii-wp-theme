@@ -15,12 +15,7 @@ $description = $category->category_description;
         include( locate_template( 'partials/category/sub-cat-header.php' ) );
       } ?>
   </div>
-  <div class="orbit-posts-wrapper">
-    <?php
-      $shortcode_str = do_shortcode("[orbit_query posts_per_page='9' style='grid3' cat='".$category->term_id."' pagination='1' ]");
-      if( strlen( $shortcode_str ) > 0 ){ echo $shortcode_str; }
-    ?>
-  </div>
+  <?php get_template_part( 'partials/grid3-numbered-pagination' );?>
   <div class="category-sidebar">
     <?php if ( is_active_sidebar( 'fii-category-sidebar' ) ) { dynamic_sidebar( 'fii-category-sidebar' ); } ?>
   </div>

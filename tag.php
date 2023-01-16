@@ -10,9 +10,7 @@ $tag = get_queried_object();
     <h1 class="page-title"><?php _e( $tag->name ); ?></h1>
     <div class="page-description"><?php _e( $tag->description ); ?></div>
   </div>
-  <div class="orbit-posts-wrapper">
-    <?php echo do_shortcode("[orbit_query posts_per_page='9' style='grid3' tag='".$tag->slug."' pagination='1' ]"); ?>
-  </div>
+  <?php get_template_part( 'partials/grid3-numbered-pagination' );?>
   <div class="tag-sidebar">
     <?php if ( is_active_sidebar( 'fii-category-sidebar' ) ) { dynamic_sidebar( 'fii-category-sidebar' ); } ?>
   </div>
