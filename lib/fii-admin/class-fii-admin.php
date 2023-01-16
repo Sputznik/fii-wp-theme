@@ -24,7 +24,7 @@ class FII_ADMIN extends FII_BASE {
   }
 
   function admin_assets(){
-    wp_enqueue_style( 'admin-css', FII_THEME_URI. '/css/admin.css', array(), time() );
+    wp_enqueue_style( 'admin-css', FII_THEME_URI. '/css/admin.css', array(), FII_THEME_VERSION );
   }
 
   function attachment_fields_to_edit( $form_fields, $post = null ){

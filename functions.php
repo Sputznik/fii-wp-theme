@@ -9,6 +9,10 @@ if( !defined( 'FII_THEME_URI' ) ) {
   define( 'FII_THEME_URI', get_template_directory_uri() );
 }
 
+if( !defined( 'FII_THEME_VERSION' ) ) {
+  define( 'FII_THEME_VERSION', '1.0.0' );
+}
+
 // INCLUDE FILES
 $inc_files = array(
   'lib/class-fii-base.php',
