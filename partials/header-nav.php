@@ -1,6 +1,6 @@
 <?php get_template_part('partials/mobile-menu');?>
 <?php do_action( 'fii_sidebar', 'fii-topbar' ); ?>
-<nav id="fii-navigation" class="navbar navbar-expand-md fixed-top" role="navigation">
+<nav id="fii-navigation" class="navbar" role="navigation">
   <div class="container">
     <a class="site-logo" href="<?php _e( get_bloginfo('url') ); ?>">
       <img class="logo-mobile" src="<?php _e( FII_THEME_URI . '/assets/logo.png' ); ?>">
