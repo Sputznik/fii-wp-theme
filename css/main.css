@@ -1591,10 +1591,11 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 }
 
 /* MAILERLITE FORM */
-#mailerlite-form_5 .mailerlite-form .mailerlite-subscribe-submit {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+.mailerlite-form .mailerlite-subscribe-submit {
+	-webkit-appearance: none !important;
+	border-radius: 0 !important;
+	 -moz-appearance: none !important;
+    appearance: none !important;
 }
 
 /* -------------------------- MEDIA QUERIES ------------------------- */
