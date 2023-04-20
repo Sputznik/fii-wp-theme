@@ -1590,6 +1590,13 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   background-color: #000000;
 }
 
+/* MAILERLITE FORM */
+#mailerlite-form_5 .mailerlite-form .mailerlite-subscribe-submit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,

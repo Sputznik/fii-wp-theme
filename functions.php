@@ -10,7 +10,7 @@ if( !defined( 'FII_THEME_URI' ) ) {
 }
 
 if( !defined( 'FII_THEME_VERSION' ) ) {
-  define( 'FII_THEME_VERSION', '1.0.0' );
+  define( 'FII_THEME_VERSION', '1.0.1' );
 }
 
 // INCLUDE FILES
