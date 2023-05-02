@@ -33,6 +33,11 @@
         'label'   => 'Also Read',
         'default' => 'Also read'
       ),
+			'editors_note' => array(
+				'type'    => 'text',
+				'label'   => 'Editors Note',
+				'default' => 'Editors Note'
+			),
 			'follow_channels' => array(
         'type'    => 'textarea',
         'label'   => 'Follow Channels',
