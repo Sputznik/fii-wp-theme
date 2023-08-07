@@ -17,7 +17,7 @@
 		</form>
 		<div class="orbit-posts-wrapper fii-dec-af">
 			<?php
-				 echo do_shortcode("[orbit_query posts_per_page='9' style='grid3' s='".$search_str."' pagination='1' ]");
+				 echo do_shortcode("[orbit_query posts_per_page='9' style='grid3' s='".$search_str."' orderby='relevance' pagination='1' ]");
 			?>
 		</div>
 		<?php else : ?>
