@@ -50,7 +50,7 @@ class FII_THEME extends FII_BASE {
 
     add_filter( 'excerpt_more', function( $more ){ return '&hellip;'; } );  // EXCERPT MORE
 
-    add_filter( 'posts_search', array( $this, 'fii_posts_search' ), 500, 2 );  // LIMIT SEARCH TO POST TITLES
+    // add_filter( 'posts_search', array( $this, 'fii_posts_search' ), 500, 2 );  // LIMIT SEARCH TO POST TITLES
 
     /* ADD SOW FROM THE THEME */
     add_action('siteorigin_widgets_widget_folders', function( $folders ){
