@@ -77,6 +77,8 @@ class FII_THEME extends FII_BASE {
 
     wp_enqueue_script('fii-user-popup', FII_THEME_URI.'/js/fii-user-popup.js', array('jquery'), FII_THEME_VERSION, true ); // SOW USER POPUP SCRIPT
 
+    wp_enqueue_script( 'anymind', 'https://anymind360.com/js/12321/ats.js', array(), null, array('strategy' => 'async'));
+
     // FII POST VIEWS COUNT
 		if( is_singular( 'post' ) ){
 			wp_enqueue_script('fii-post-views', FII_THEME_URI.'/js/fii-post-view-count.js', array('jquery'), FII_THEME_VERSION, true );
