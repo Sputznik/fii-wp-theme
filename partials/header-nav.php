@@ -2,9 +2,7 @@
 <?php do_action( 'fii_sidebar', 'fii-topbar' ); ?>
 <nav id="fii-navigation" class="navbar" role="navigation">
   <div class="container">
-    <a class="site-logo" href="<?php _e( get_bloginfo('url') ); ?>">
-      <img class="logo-mobile" src="<?php _e( FII_THEME_URI . '/assets/logo.png' ); ?>">
-    </a>
+    <?php get_template_part('partials/site-logo'); ?>
     <?php do_action('fii_nav_menu'); ?>
     <div class="navbar-buttons">
       <button class="nav-search">

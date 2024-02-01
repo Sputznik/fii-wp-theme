@@ -19,7 +19,8 @@
           </div>
         </div>
       </div>
-    </div> <!-- end of #site  -->
+    </div>
+  </div><!-- end of #site  -->
 <?php wp_footer(); ?>
 </body>
 </html>
