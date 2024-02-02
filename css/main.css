@@ -487,28 +487,45 @@ hr {
   margin-bottom: 20px;
 }
 
-.fii-thumbnail-bg,
-.single .featured-img {
-  position: relative;
+.fii-thumbnail-bg {
   background-color: #eeeeee;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.fii-thumbnail-bg .img-link {
+/* Thumbnail */
+.fii-fluid-thumbnail {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.fii-fluid-thumbnail::before {
+  content: '';
+  display: block;
+  padding-top: 60%;
+}
+
+.fii-fluid-thumbnail > .no-thumbnail {
+  background-color: #eeeeee;
+}
+
+.fii-fluid-thumbnail > img,
+.fii-fluid-thumbnail > .no-thumbnail {
   position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /*  POST GRID  */
 .fii-grid .post-card {
   background-color: #ffffff;
-}
-
-.fii-grid .fii-thumbnail-bg {
-  min-height: 200px;
 }
 
 .fii-grid .post-desc {
@@ -548,10 +565,6 @@ hr {
   grid-template-columns: 120px 1fr;
 }
 
-.fii-list .fii-thumbnail-bg {
-  height: 72px;
-}
-
 .fii-list .title,
 .fii-featured-grid .title {
   margin-top: -3px;
@@ -589,14 +602,16 @@ hr {
   margin-bottom: 0;
 }
 
-.fii-featured-grid .post-item .fii-thumbnail-bg {
-	height: 100px;
+.fii-featured-grid .post-item .fii-fluid-thumbnail::before {
+  padding-top: 100px;
 }
 
-.fii-featured-grid .post-item.wide .fii-thumbnail-bg {
+.fii-featured-grid .post-item.wide .fii-fluid-thumbnail {
   margin: 0 0 24px;
-  height: 380px;
-  width: 100%;
+}
+
+.fii-featured-grid .post-item.wide .fii-fluid-thumbnail::before {
+  padding-top: 70%;
 }
 
 .fii-list .post-desc,
@@ -623,18 +638,13 @@ hr {
 }
 
 .single .featured-img {
-  height: 100%;
   width: 100%;
   margin-bottom: 20px;
   position: relative;
 }
 
-.single .featured-img::before,
-.single.post-template-single-post-1 .featured-img::before,
-.single.post-template-single-post-2 .featured-img::before {
+.single .featured-img > img {
   display: block;
-  content: "";
-  padding-top: 56.25%;
 }
 
 .fii-single-post-header > .title,
@@ -1495,6 +1505,20 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   word-break: break-word;
 }
 
+body.single.single-job_listing .featured-img::before {
+  content: "";
+  display: block;
+  padding-top: 56.72%;
+}
+
+body.single.single-job_listing .featured-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+}
+
 .single-job_listing .single-post-content {
   margin-bottom: 50px;
 }
@@ -1653,6 +1677,9 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 
 @media only screen and (max-width: 768px) and (min-width: 768px){
   #fii-user-modal .meta{ margin: 0 !important; }
+  .fii-featured-grid .post-item.wide .fii-fluid-thumbnail::before {
+    padding-top: 85%;
+  }
 }
 
 @media(max-width: 768px) {
@@ -1710,9 +1737,6 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
   /* FEATURED GRID */
   .fii-featured-grid .post-item.wide, .fii-featured-grid .post-item { width: 100%; float: none; }
   .fii-featured-grid .post-item.wide{ margin-bottom: 30px; }
-  .fii-featured-grid .post-item.wide .fii-thumbnail-bg {
-    height: 290px;
-  }
 }
 
 @media(max-width: 500px){ .fii-user-grid{ grid-template-columns: repeat( 1, 1fr ); } }

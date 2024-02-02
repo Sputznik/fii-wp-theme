@@ -1,6 +1,9 @@
 <?php
-  $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
+  $thumbnail = get_the_post_thumbnail( $post->ID, 'full', array( 'alt'=> 'Featured Image', 'style' => 'display:block;' ) );
 ?>
-<div class="fii-thumbnail-bg" style="background-image: url( <?php _e( $thumbnail );?> );">
-  <a href="<?php _e( get_the_permalink() );?>" class="img-link"></a>
-</div>
+<a href="<?php _e( get_the_permalink() );?>" class="fii-fluid-thumbnail">
+  <?php if( $thumbnail ): echo $thumbnail; ?>
+  <?php else: ?>
+    <div class="no-thumbnail" aria-hidden="true"></div>
+  <?php endif;?>
+</a>
