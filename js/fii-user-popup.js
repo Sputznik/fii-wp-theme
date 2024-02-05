@@ -3,8 +3,8 @@ jQuery.fn.fii_user_modal = function() {
 	return this.each(function() {
 
 		var $el           = jQuery(this),
-        $image         = $el.find('.thumbnail-bg'),
-				imageUrl			=	$image.attr('style'),
+        $image         = $el.find('.thumbnail-bg > img'),
+				imageUrl			=	$image.attr('src'),
         name          = $el.find('.name').text(),
         role          = $el.find('.role').text(),
         bio           = $el.find('.bio').html(),
@@ -25,7 +25,9 @@ jQuery.fn.fii_user_modal = function() {
 					</div>
 					<div class="modal-body">
 						<div class="fii-card-body">
-							<div class="thumbnail-bg" style="${imageUrl}"></div>
+							<div class="thumbnail-bg">
+								${imageUrl ? `<img src="${imageUrl}" alt="User Image" />` : ''}
+							</div>
 							<div class="meta">
 								<h5 class="name">${name}</h5>
 								<span class="role">${role}</span>

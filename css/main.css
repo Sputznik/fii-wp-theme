@@ -489,9 +489,6 @@ hr {
 
 .fii-thumbnail-bg {
   background-color: #eeeeee;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 /* Thumbnail */
@@ -1038,7 +1035,7 @@ hr {
 .fii-video-slider .video-meta {
   background-color: #2d2d2d;
   color: #ffffff;
-  width: 60%;
+  width: 50%;
   height: 200px;
   padding: 20px;
   display: flex;
@@ -1052,8 +1049,12 @@ hr {
 }
 
 .fii-video-slider .fii-thumbnail-bg {
-  height: 200px;
-  width: 40%;
+  width: 50%;
+}
+
+.fii-video-slider .slick-slide img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .fii-video-slider button.slick-prev,
@@ -1422,26 +1423,27 @@ ul.slick-dots li button:hover, ul.slick-dots li.slick-active button{ background:
 
 .fii-user-grid .fii-card-body:hover { cursor: pointer; }
 
-#fii-user-modal .thumbnail-bg,
-.fii-user-grid .thumbnail-bg {
-  background-position: initial;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.fii-user-grid .thumbnail-bg,
+#fii-user-modal .thumbnail-bg {
+  overflow: hidden;
+  position: relative;
   background-color: #eeeeee;
 }
 
-.fii-user-grid .thumbnail-bg{
-  width: 100%;
-  height: 100%;
-}
-
-.fii-user-grid .thumbnail-bg::after{
+.fii-user-grid .thumbnail-bg::before,
+#fii-user-modal .thumbnail-bg::before {
   content: "";
   display: block;
   padding-top: 100%;
+}
+
+.fii-user-grid .thumbnail-bg > img,
+#fii-user-modal .thumbnail-bg > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .fii-user-grid .name,

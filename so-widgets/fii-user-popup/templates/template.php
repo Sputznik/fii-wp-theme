@@ -10,7 +10,11 @@
     <div class="fii-user-card">
       <div data-behaviour="fii-user-modal" data-social='<?php _e( json_encode( $social_links ) );?>'>
         <div class="fii-card-body">
-          <div class="thumbnail-bg" style="background-image: url('<?php _e( $image );?>');"></div>
+          <div class="thumbnail-bg">
+            <?php if( $image ): ?>
+              <img src="<?php _e( $image );?>" alt="User Image" />
+            <?php endif; ?>
+          </div>
           <div class="meta">
             <h5 class="name"><?php _e( $item['user_name'] );?></h5>
             <span class="role"><?php _e( $item['user_role'] );?></span>

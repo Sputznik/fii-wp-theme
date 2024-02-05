@@ -13,7 +13,11 @@
             <h3 class="mt-0 mb-0"><?php _e( $slide['video_title'] ); ?></h3>
             <p class="mb-0">View full playlist »</p>
           </div>
-          <div class="fii-thumbnail-bg" <?php if( isset( $image_url ) && $image_url ){ echo 'style="background-image:url('.$image_url.');"'; } ?>></div>
+          <div class="fii-thumbnail-bg">
+            <?php if( $image_url ): ?>
+              <img src="<?php _e( $image_url );?>" alt="Video Thumbnail" />
+            <?php endif;?>
+          </div>
         </div>
       </a>
     <?php endforeach;?>
