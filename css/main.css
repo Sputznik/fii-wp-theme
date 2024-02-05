@@ -621,6 +621,11 @@ hr {
   padding: 0;
 }
 
+.fii-list .fii-fluid-thumbnail,
+.fii-featured-grid .fii-fluid-thumbnail {
+  align-self: start;
+}
+
 /* SINGLE POST */
 .single-post-content a{ color: #cf2e2e; }
 .single-post-content a:hover { text-decoration: underline; }
