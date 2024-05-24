@@ -1630,6 +1630,11 @@ body.single.single-job_listing .featured-img img {
     appearance: none !important;
 }
 
+.fii-single-post-header .edit-post-link {
+  color: #cf2e2e;
+  font-weight: bold;
+}
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,

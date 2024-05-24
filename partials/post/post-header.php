@@ -2,8 +2,9 @@
 /**
  * The template for displaying single post header.
  */
- $author_name = get_the_author();
- $author_url = get_author_posts_url( get_the_author_meta('ID') );
+ $author_name   = get_the_author();
+ $author_url    = get_author_posts_url( get_the_author_meta('ID') );
+ $edit_post_url = admin_url( 'post.php?post='.$post->ID ).'&action=edit&classic-editor__forget';
 ?>
 <div class="fii-single-post-header">
   <div class="fii-breadcrumb">
@@ -27,6 +28,10 @@
     <span class="post-date"><?php _e( the_time( 'M j, Y' ) );?></span>
     <span class="dot"></span>
     <span><?php echo do_shortcode('[rt_reading_time postfix="min read" postfix_singular="min"]'); ?></span>
+    <?php if( current_user_can('administrator') ): ?>
+      <span class="dot"></span>
+      <span class="edit-post-link"><a href="<?php _e( $edit_post_url );?>">Edit Post</a></span>
+    <?php endif; ?>
   </div>
   <div class="fii-social-share"><?php echo do_shortcode('[addtoany]');?></div>
 </div>
