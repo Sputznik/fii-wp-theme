@@ -10,7 +10,7 @@ if( !defined( 'FII_THEME_URI' ) ) {
 }
 
 if( !defined( 'FII_THEME_VERSION' ) ) {
-  define( 'FII_THEME_VERSION', '1.0.4' );
+  define( 'FII_THEME_VERSION', time() ); // '1.0.4'
 }
 
 // INCLUDE FILES
@@ -25,7 +25,8 @@ $inc_files = array(
   'lib/class-fii-post-views.php',
   'lib/fii-hooks/fii-woocommerce-hooks.php',
   'lib/class-fii-molongui.php',
-  'lib/class-fii-util.php'
+  'lib/class-fii-util.php',
+  'lib/class-fii-restrict-content.php'
 );
 
 foreach( $inc_files as $inc_file ){ require_once( $inc_file ); }
