@@ -1635,6 +1635,15 @@ body.single.single-job_listing .featured-img img {
   font-weight: bold;
 }
 
+/* WPMEM RESTRICTED MSG */
+.wtp-wpmem-restricted-msg {
+  margin: 25px 0;
+  color: #000000;
+  text-align: center;
+  padding: 100px 40px;
+  background-color: #eeeeee;
+}
+
 /* -------------------------- MEDIA QUERIES ------------------------- */
 @media(min-width: 768px) {
   .fii-grid-2,
