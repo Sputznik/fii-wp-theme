@@ -70,7 +70,7 @@ class FII_RESTRICT_CONTENT extends FII_BASE {
     global $wp;
 
     foreach( $items as $item ){
-      if( !empty( $item->post_title ) && 'login' == strtolower( $item->post_title ) ){
+      if( !empty( $item->title ) && 'login' == strtolower( $item->title ) ){
         $item->url .= '?redirect_to='.urlencode( esc_url( home_url( $wp->request ) ) );
       }
     }
