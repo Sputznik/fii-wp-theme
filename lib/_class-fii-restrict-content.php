@@ -4,15 +4,17 @@ class FII_RESTRICT_CONTENT extends FII_BASE {
 
   function __construct(){
 
-    add_action( 'init', array( $this, 'init' ) );
+    // add_action( 'init', array( $this, 'init' ) );
 
-    add_action( 'template_redirect', array( $this, 'private_page_redirect' ) );
+    // add_action( 'template_redirect', array( $this, 'private_page_redirect' ) );
 
-    add_filter( 'wp_get_nav_menu_items', array( $this, 'nav_items') );
+    // add_filter( 'wp_get_nav_menu_items', array( $this, 'nav_items') );
 
-    add_filter( 'wpmem_restricted_msg', array( $this, 'restricted_msg' ), 10, 2 );
+    // add_filter( 'wpmem_restricted_msg', array( $this, 'restricted_msg' ), 10, 2 );
 
     add_action( 'wp_ajax_fii_add_caps_subscriber', array( $this, 'add_capabilities_to_subscriber' ) );
+
+    add_action( 'customize_register', array( $this, 'restrict_content' ) );
 
   }
 
@@ -97,6 +99,18 @@ class FII_RESTRICT_CONTENT extends FII_BASE {
     print_r( $role );
     $role->add_cap( 'read_private_pages' );
     wp_die();
+  }
+
+  function restrict_content( $wp_customize ){
+
+    global $fii_customize;
+
+    $fii_customize->panel( $wp_customize, 'fii_theme_panel', 'Theme Options' );
+
+    $fii_customize->section( $wp_customize, 'fii_theme_panel', 'fii_restrict_content_section', 'Content Restriction', 'Content Restriction Settings' );
+
+    $fii_customize->text( $wp_customize, 'fii_restrict_content_section', '[restrict_content_section][login_page_url]', 'Custom Login Page URL', '' );
+
   }
 
 }
