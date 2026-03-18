@@ -52,3 +52,24 @@ add_action('fii_nav_menu', function(){
 add_filter( 'addtoany_sharing_disabled', function(){
 	if( is_404() ){ return true; }
 } );
+
+// CUSTOMIZE RSS CONTENT TAG OUTPUT
+add_filter( 'the_content_feed', function( $content ){
+	$content_character_count = 400; // CHARACTER COUNT
+
+	// RETURN IF CONTENT IS EMPTY
+	if( empty( $content ) ) return $content;
+
+	// STRIP HTML TAGS TO COUNT THE CHARACTERS
+	$content = strip_tags($content);
+
+	// RETURN IF CONTENT IS EMPTY
+	if( empty( $content ) ) return $content;
+
+	// TRUNCATE THE CONTENT AND APPEND '...'
+	if( strlen( $content ) > $content_character_count ){
+		return substr( $content, 0, $content_character_count ).'...';
+	}
+
+	return substr( $content, 0, $content_character_count );
+} );
