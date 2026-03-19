@@ -11,32 +11,32 @@ class FII_THEME extends FII_BASE {
 
     $this->sidebars = array(
       'fii-topbar'  	=> array(
-        'name' 				=> __( 'FII Topbar', 'fii-wp-theme' ),
-        'description' => __( 'Appears above the primary navigation menu', 'fii-wp-theme' )
+        'name' 				=> 'FII Topbar',
+        'description' => 'Appears above the primary navigation menu'
       ),
       'fii-single-post-sidebar'	=> array(
-        'name' 				=> __( 'Single Post Sidebar', 'fii-wp-theme' ),
-        'description' => __( 'Appears in the single post page before the pre-footer area', 'fii-wp-theme' )
+        'name' 				=> 'Single Post Sidebar',
+        'description' => 'Appears in the single post page before the pre-footer area'
       ),
       'fii-above-post-content'	=> array(
-        'name' 				=> __( 'Above Single Post Content', 'fii-wp-theme' ),
-        'description' => __( 'Appears in the single post page before the post content', 'fii-wp-theme' )
+        'name' 				=> 'Above Single Post Content',
+        'description' => 'Appears in the single post page before the post content'
       ),
       'fii-support-work'	=> array(
-        'name' 				=> __( 'Support the work', 'fii-wp-theme' ),
-        'description' => __( 'Appears in the single post page before the social share area', 'fii-wp-theme' )
+        'name' 				=> 'Support the work',
+        'description' => 'Appears in the single post page before the social share area'
       ),
       'fii-category-sidebar'	=> array(
-        'name' 				=> __( 'Category Sidebar', 'fii-wp-theme' ),
-        'description' => __( 'Appears in the category page before the footer area', 'fii-wp-theme' )
+        'name' 				=> 'Category Sidebar',
+        'description' => 'Appears in the category page before the footer area'
       ),
       'fii-shop-header'	=> array(
-        'name' 				=> __( 'Shop Page Header', 'fii-wp-theme' ),
-        'description' => __( 'Appears in the shop page after the primary navigation', 'fii-wp-theme' )
+        'name' 				=> 'Shop Page Header',
+        'description' => 'Appears in the shop page after the primary navigation'
       ),
       'footer-sidebar'	=> array(
-        'name' 				=> __( 'Footer', 'fii-wp-theme' ),
-        'description' => __( 'Appears in the footer area', 'fii-wp-theme' )
+        'name' 				=> 'Footer',
+        'description' => 'Appears in the footer area'
       )
     );
 
@@ -128,9 +128,9 @@ class FII_THEME extends FII_BASE {
 
   function register_sidebar( $sidebar ) {
     register_sidebar( array(
-      'name' 			    => $sidebar['name'],
-      'id' 			      => $sidebar['id'],
-      'description' 	=> $sidebar['description'],
+      'id' 						=> $sidebar['id'],
+      'name' 					=> __( $sidebar['name'], 'fii-wp-theme' ),
+      'description' 	=> __( $sidebar['description'], 'fii-wp-theme' ),
       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
       'after_widget' 	=> "</aside>",
       'before_title' 	=> '<h3>',
