@@ -73,3 +73,35 @@ add_filter( 'the_content_feed', function( $content ){
 
 	return substr( $content, 0, $content_character_count );
 } );
+
+// ADD FEATURED IMAGE LINK IN RSS FEED
+add_action( 'rss2_item', function(){
+	global $post;
+
+	if( !has_post_thumbnail( $post->ID ) ) return;
+
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+
+	if( empty( $thumbnail_id ) ) return;
+
+	$post_thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+
+	if( empty( $post_thumbnail ) ) return;
+
+	$mime_type = get_post_mime_type( $thumbnail_id );
+
+	if( empty( $mime_type ) ) return;
+
+	$featured_image_filesize = 0;
+	$file_path = get_attached_file( $thumbnail_id );
+
+	// GET FILESIZE
+	if( $file_path && file_exists( $file_path ) ){
+		$featured_image_filesize = filesize( $file_path );
+	}
+
+	if( empty( $featured_image_filesize ) ) return;
+
+	echo '<enclosure url="'.$post_thumbnail[0].'" length="'.$featured_image_filesize.'" type="'.$mime_type.'" />';
+
+} );
