@@ -117,6 +117,9 @@ class FII_THEME extends FII_BASE {
 
     show_admin_bar(false);  //HIDE ADMIN BAR FROM THE FRONTEND
 
+    add_theme_support( 'editor-styles' );
+    add_editor_style( FII_THEME_URI.'/css/editor-style.css' );
+
   }
 
   function widgets_init() {
