@@ -20,6 +20,7 @@ $inc_files = array(
   'lib/customize-theme/customize-theme.php',
   'lib/fii-admin/class-fii-admin.php',
   'lib/wp-bootstrap-navwalker.php',
+  'lib/class-fii-metric-filter.php',
   'lib/fii-hooks/fii-hooks.php',
   'lib/class-fii-shortcode.php',
   'lib/class-fii-post-views.php',
