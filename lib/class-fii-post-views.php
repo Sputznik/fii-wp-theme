@@ -22,6 +22,11 @@ class FII_POST_VIEWS extends FII_BASE {
 	}
 
 	function update_count_ajax(){
+		$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+		if( FII_METRIC_FILTER::is_bot_user_agent( $user_agent ) ){
+			return;
+		}
 
 		// CHECK TOKEN / NONCE
 	  if( !check_ajax_referer('fii_post_view_count', 'token') ){
