@@ -1,11 +1,15 @@
 jQuery(document).ready(function(){
 
+  var viewCountTimer  = null;
   var $fii_post_stats = jQuery('[data-behaviour="post-view-stat"]');
 
-  if( $fii_post_stats.length > 0 ){ updatePostViewCount(); }
+  if( $fii_post_stats.length > 0 ){
+    viewCountTimer = setTimeout( function(){
+      updatePostViewCount();
+    }, 3000 );
+  }
 
   function updatePostViewCount(){
-
     var id = $fii_post_stats.data('id');
     var url = FII_POST_VIEW.ajaxurl;
 
@@ -18,7 +22,12 @@ jQuery(document).ready(function(){
         token   : FII_POST_VIEW.token
       }
     });
-
   }
+
+  jQuery(window).on('beforeunload', function(){
+    if( viewCountTimer ){
+      clearTimeout(viewCountTimer);
+    }
+  });
 
 });
