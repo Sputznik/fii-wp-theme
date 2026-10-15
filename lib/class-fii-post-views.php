@@ -25,7 +25,7 @@ class FII_POST_VIEWS extends FII_BASE {
 		$user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
 		if( FII_METRIC_FILTER::is_bot_user_agent( $user_agent ) ){
-			return;
+			wp_die();
 		}
 
 		// CHECK TOKEN / NONCE
